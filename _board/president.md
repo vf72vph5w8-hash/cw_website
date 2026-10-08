@@ -1,5 +1,5 @@
 ---
-position: president
+position: President
 layout: board-member
 firstName: Ron
 lastName: Jenoriki
