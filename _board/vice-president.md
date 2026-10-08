@@ -1,10 +1,14 @@
 ---
+position: Vice-President
 layout: board-member
-position: Vice President
-title: Sandra Wall
+firstName: Sandra
+lastName: Wall
 address: 3021 SE 18th Pl
 phone: 239-839-8466
+title: Sandra Wall
 email: cornwallna+vicepresident@gmail.com
+image:
+  feature: /assets/uploads/sticklady.png
 picture: /assets/uploads/sticklady.png
 ---
 Fall brings so many welcome changes. From the slightly less humid weather, fun festivals, and farmer’s markets to welcoming our seasonal residents back; it’s a good time of year.
