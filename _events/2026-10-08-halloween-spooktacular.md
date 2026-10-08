@@ -1,18 +1,6 @@
 ---
 title: Halloween Spooktacular
 featured: true
-start_time: 2026-10-31 18:30
-location: 2035 SE 29th Street
-contacts:
-  - name: Mary Ellen Saba
-    phone: 239 699 0571
-    email: mesaba2@gmail.com
-  - name: Jen Barch
-    phone: 813-542-9752
-    email: jenbarch@gmail.com
-  - name: Suzie
-    phone: 239-747-5652
-    email: suzievilla@gmail.com
 description: >-
   Join us on **Saturday October 31, 2026** for our annual TRICK or TREAT Fun!
 
@@ -27,4 +15,20 @@ description: >-
 
 
   We gladly welcome any volunteers to help.
+summary: Saturday, October 31, 2026 starting at 6:30pm arrive at 2035 SE 29th
+  Street, bring your chairs and visit with neighbors. Come dressed to impress in
+  your best Halloween costume.
+image: /assets/uploads/halloween.png
+start_time: 2026-10-31 18:30
+location: 2035 SE 29th Street
+contacts:
+  - name: Mary Ellen Saba
+    phone: 239 699 0571
+    email: mesaba2@gmail.com
+  - name: Jen Barch
+    phone: 813-542-9752
+    email: jenbarch@gmail.com
+  - name: Suzie
+    phone: 239-747-5652
+    email: suzievilla@gmail.com
 ---
