@@ -1,8 +1,11 @@
 ---
-layout: board-member
 position: Secretary
-title: Karla Martinez
+layout: board-member
+firstName: Karla
+lastName: Martinez
+address: 2801 SE 22nd Ave
 phone: 919-830-8734
+title: Karla Martinez
 email: cornwallna+secretary@gmail.com
 image:
   feature: /assets/uploads/sticklady.png
