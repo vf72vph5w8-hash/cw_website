@@ -1,10 +1,14 @@
 ---
-layout: board-member
+lastName: Jenoriki
 position: President
-title: Ron Jenoriki
+title: president
+layout: board-member
+firstName: Ron
 address: 2837 SE 19th Ave
 phone: 732-766-4694
 email: cornwallna+president@gmail.com
+image:
+  feature: /assets/uploads/stickperson.png
 picture: /assets/uploads/stickperson.png
 ---
 Hello Neighbors,
