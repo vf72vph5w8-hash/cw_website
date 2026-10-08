@@ -1,9 +1,11 @@
 ---
-layout: board-member
 position: Treasurer
-title: Wendell Christoff
+layout: board-member
+firstName: Wendell
+lastName: Christoff
 address: 2801 SE 19th Ave
 phone: 616-581-1104
+title: Wendell Christoff
 email: cornwallna+treasurer@gmail.com
 image:
   feature: /assets/uploads/stickperson.png
