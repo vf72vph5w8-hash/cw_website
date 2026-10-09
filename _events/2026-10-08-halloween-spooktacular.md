@@ -14,7 +14,7 @@ description: >-
   **Saturday October 31, 2026 starting at 6:30pm** arrive at 2035 SE 29th Street, bring your chairs and visit with neighbors. Come dressed to impress in your best Halloween costume. We will have delicious hot dogs prepared by our grill master and chips and a drink. Enjoy the hot dogs before loading up on candy! **6:45pm Let the Fun Begin with Trick or Treating through the neighborhood!!**
 
 
-  We gladly welcome any volunteers to help.
+  We gladly welcome any volunteers to help or for more info contact:
 summary: Saturday, October 31, 2026 starting at 6:30pm arrive at 2035 SE 29th
   Street, bring your chairs and visit with neighbors. Come dressed to impress in
   your best Halloween costume.
