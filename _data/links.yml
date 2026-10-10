@@ -1,0 +1,32 @@
+categories:
+  - category_title: STATE OF FLORIDA
+    links_list:
+      - link_label: Official Web Site
+        url: https://www.myflorida.gov
+      - link_label: Florida Highway Saftey and Motor Vehicles
+        url: https://www.flhsmv.gov
+  - category_title: LEE COUNTY
+    links_list:
+      - link_label: Official Website
+        url: https://www.leegov.com
+        phone: (239) 533-2111
+      - link_label: Lee County Schools
+        url: https://www.leeschools.net
+        phone: (239) 334-1102
+  - category_title: CAPE CORAL
+    links_list:
+      - link_label: Official Web Site
+        url: http://www.capecoral.net
+        phone: (239) 574-0401
+      - link_label: Non-Emergency telephone
+        phone: "311"
+  - category_title: PUBLIC SAFETY
+    links_list:
+      - link_label: CCPD Web Site
+        url: https://www.capecops.com
+        phone: (239) 574-3223)
+  - category_title: OTHER
+    links_list:
+      - link_label: CAPE CORAL LIBRARY
+        url: https://www.leegov.com/library/branches/cc
+        phone: (239) 533-4500
