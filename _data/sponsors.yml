@@ -10,7 +10,7 @@ slides:
     phone: 239-839-8466
     email: medi.sandra.wall@gmail.com
     link: https://Insuranceoptionsfl.com
-    name: Specializing in Medicare Products    
+    name: Specializing in Medicare Products
   - img: /images/ads/QualityPest.jpg
     caption: Donald Burns, Quality Pest Control
     phone: 239-540-2359
@@ -39,3 +39,11 @@ slides:
     name: CNA
     email: cornwallisna+ads@gmail.com
     link: https://cornwallisna.org/aboutus
+sponsors:
+  - weight: 1
+    company_name: Royal Shell Real Estate
+    contact_name: Sandra Wall
+    phone: 239-839-8466
+    email: Realtor.Sandra.Wall@gmail.com
+    url: https://sandrawall.royalshellrealestate.com
+    logo: /assets/uploads/royalshell2.png
