@@ -3,7 +3,7 @@ layout: classified_item
 title: Selling my whatchmacallit ...
 thumbnail: whatchamacallit.jpg
 featured: false
-expiration_date: 2026-10-20T15:55
+expiration_date: ""
 description: >-
   ## Stuff for sale
 
