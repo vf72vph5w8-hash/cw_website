@@ -1,7 +1,7 @@
 ---
 layout: classified_item
 title: Selling my whatchmacallit ...
-thumbnail: /assets/uploads/classifieds/classifieds/whatchamacallit.jpg
+thumbnail: whatchamacallit.jpg
 featured: false
 expiration_date: 2026-10-20T15:55
 description: >-
