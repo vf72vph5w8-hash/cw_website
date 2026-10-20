@@ -2,6 +2,7 @@
 title: Karla's Notes
 date: 2021-06-28 10:18
 featured: false
+image: /images/karla1.png
 ---
 My first note goes out to all my snow bird neighbors that have left. You are already missed. I am hoping that this fall the ones that have not come, due to their borders being closed since 2019, will return. I am glad that the Coronavirus is slowing down due to the vaccinations. Hopefully some normality will return and the day of the MASKS will disappear.
 
