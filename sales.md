@@ -1,10 +1,17 @@
 ---
+header_image: /assets/uploads/pages/for-sale-sign.png
+intro_text: >-
+  ## CNA Members: If you have something you want to sell or give away
+
+
+  Please send us the details and pictures if any to our [Editors](mailto:cornwallisna+4sale@gmail.com) for inclusion here. Let us know if it is free, a curb alert, etc
 layout: content_page
-topnav: sales
 permalink: /sales
 banner: For sale and free stuff
+topnav: sales
+title: For sale and free stuff
 image:
-  feature: "for-sale-sign.png"
+  feature: for-sale-sign.png
   feature_width: 50%
 ---
 
