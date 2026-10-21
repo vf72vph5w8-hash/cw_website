@@ -5,4 +5,5 @@ intro_text: >-
 
 
   This is a shared photo album of some of the picutres we have collected. If you would like to share some of your pictures just send them to us at [cornwallisna+photos@gmail.com](mailto:cornwallisna+photos@gmail.com)
+featured_album: Cornwallis Views
 ---
