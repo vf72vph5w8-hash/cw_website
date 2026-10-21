@@ -3,7 +3,14 @@ layout: content_page
 topnav: links
 banner: All the links we thought to put down
 permalink: /links
-sponsors: "bottom"
+sponsors: bottom
+title: All the links we thought to put down
+intro_text: |-
+  # Cornwallis Neighborhood Assocation
+
+  ## Email us at [cornwallisna@gmail.com](mailto:cornwallisna@gmail.com)
+
+  # Community Information
 ---
 
 # Cornwallis Neighborhood Assocation
