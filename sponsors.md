@@ -3,7 +3,9 @@ layout: content_page
 topnav: sponsors
 banner: A special thanks to our sponsors
 permalink: /sponsors
-sponsors: "off"
+sponsors: off
+title: A special thanks to our sponsors
+intro_text: ""
 ---
 
 
