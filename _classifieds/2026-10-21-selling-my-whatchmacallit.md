@@ -1,7 +1,7 @@
 ---
 layout: classified_item
 title: Selling my whatchmacallit ...
-thumbnail: /assets/uploads/classifieds/whatchamacallit.jpg
+thumbnail: /assets/uploads/whatchamacallit.jpg
 featured: false
 description: >-
   ## Stuff for sale
