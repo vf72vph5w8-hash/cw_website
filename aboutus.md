@@ -5,11 +5,12 @@ permalink: /aboutus
 xsidemenu:
   title: Other places to click
   menuitems:
-    - text: "Item 1"
+    - text: Item 1
       link: "#"
-    - text: "Item 2"
+    - text: Item 2
       link: "#"
-
+title: About Us
+intro_text: ""
 ---
 
 
