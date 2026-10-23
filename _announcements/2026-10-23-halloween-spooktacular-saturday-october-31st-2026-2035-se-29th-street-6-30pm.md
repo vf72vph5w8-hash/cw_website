@@ -1,8 +1,9 @@
 ---
-title: Halloween Spooktacular - Saturday October 31st, 2026 - 2035 SE 29th
-  Street - 6:30PM
+title: Neighborhood Watch
 active: true
 ---
-![Halloween Image](/assets/uploads/halloween.png)
+![Image of a Police Officer](/assets/uploads/speeding.jpg)
 
-Saturday, October 31, 2026 starting at 6:30pm arrive at 2035 SE 29th Street, bring your chairs and visit with neighbors. Come dressed to impress in your best Halloween costume.
+Speeders, Vandalism, & Non-emergency police reports: [239-547-3223](tel:239-547-3223).
+
+Code enforcement issues, Citizens Action Center, broken sprinklers and mowing issues: [311](tel:311)
