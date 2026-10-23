@@ -45,6 +45,9 @@ mid_page_announcements:
   - Annual Membership Drive is underway.
   - Zelle payment is now available for membership
   - Want to get involved in the CNA web site?
+  - Please note the latest events in the CNA Calendar!
+  - "Open Positions:"
+  - Join the club!
 bottom_row_announcements:
   - Halloween Spooktacular - Saturday October 31st, 2026 - 2035 SE 29th Street -
     6:30PM
