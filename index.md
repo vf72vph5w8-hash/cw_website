@@ -29,10 +29,10 @@ split_section_2:
     Fort Myers coastline.
 
 
-    [News](/news.html){: .button }
+    [News](/news.html){: .buttonlink }
 
 
-    [Signup!](/membership.html){: .button }
+    [Signup!](/membership.html){: .buttonlink }
   slideshow_images:
     - https://lh3.googleusercontent.com/C2OMZwOF8YKSh9kwUXjiqAsUccMBQ-84WrrbtB5l9nrk79Vz3Ah9qCY6Kk67NOSv9iygqsln7QaMTfmyQEyLGCFxmR7d68n6cIY89hxXMbDxnyDcQW-MM725O4Ci4VE5SVHoYyMeUaU=w2400
     - https://lh3.googleusercontent.com/HOhe2siVn2ovfsH-mzxIoo9LavYHPvyKFRhFSga2vh1V_MNto-NoFz02oXG5plITUAwmlQ9EqUdQ3cU7xq4MIubQJkPS9wGEGryQfy7JYM7lg8OXsoGzqswljUQs2vDKmynCb6ce23U=w2400
