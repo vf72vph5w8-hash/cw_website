@@ -40,15 +40,14 @@ split_section_2:
     - https://lh3.googleusercontent.com/ikD15IMzvdLpyt7xL4yh_29nDCil6wgNsVjgbZYYgleNWLsX1lUzfAMWQLyCRqfBNo9_lFBMskOV_HXXkLDDZhlSSaWdzcKQTFVF2ceSlYvStsVtzCufi_tjB3G0MV5ugvSsIYx05g=w2400
     - https://lh3.googleusercontent.com/pJzZJ279SpDN72CnFXzLRHJlWL_5fmlA0MC28UEPr-jHUbvKtH2zlpWyb5rstYA2woHhjDgB2OyvshqQl11OmpPPtCyi1NSxtGl26Vq5gQOSYbu3xgtMg7rN8Bi6de1siAiYLHb1fsw=w2400
 mid_page_announcements:
-  - Annual Membership Drive is underway.
-  - Zelle payment is now available for membership
-  - Want to get involved in the CNA web site?
-  - Please note the latest events in the CNA Calendar!
-  - "Open Positions:"
-  - Join the club!
+  - 2026-10-23-annual-membership-drive-is-underway
+  - 2026-10-23-zelle-payment-is-now-available-for-membership
+  - 2026-10-23-want-to-get-involved-in-the-cna-web-site
+  - 2026-10-23-please-note-the-latest-events-in-the-cna-calendar
+  - 2026-10-23-open-positions
+  - 2026-10-23-join-the-club
 bottom_row_announcements:
-  - Halloween Spooktacular - Saturday October 31st, 2026 - 2035 SE 29th Street -
-    6:30PM
-  - Neighborhood Watch
-  - Cape Coral Services & Schedules
+  - 2026-10-23-halloween-spooktacular-saturday-october-31st-2026-2035-se-29th-street-6-30pm-1
+  - 2026-10-23-halloween-spooktacular-saturday-october-31st-2026-2035-se-29th-street-6-30pm
+  - 2026-10-23-cape-coral-services-schedules
 ---
