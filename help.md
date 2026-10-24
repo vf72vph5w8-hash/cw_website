@@ -2,28 +2,25 @@
 layout: content_page
 permalink: /help
 topnav: home
-sponsors: "off"
+sponsors: off
 image:
-  feature: "CornwallisLetterhead.png"
+  feature: CornwallisLetterhead.png
   feature_width: 50%
+title: Help!!!
 ---
-
 # Welcome to the Cornwallis Neighborhood Association (CNA) Website
 
 This website is maintained by volunteer's.   If you would like to volunteer to write articles, review membership information, update and manage this website please let us know.  You don't have to be a computer wiz, just have some time to help, we can show you the rest.
-
 
 # Navigation
 
 Getting around this site is hopefully straightforward, if not, *please* let us know so we can make it easier.  At the bottom of this page and all pages you will see a feedback link, you can provide your valuable input via this link and we'll see what we can do to make it better.  Please file these as website feedback using the <a href="{{site.baseurl}}/issues.html">feedback link</a> which is also found at the bottom of every page.
 
-
 ## The menu system
 
 The menu system is found at the top of every page.  You can quickly switch between topics by selecting (clicking) on one of these topics:
 
-<img src="/images/help_menus.png">
-
+![Screenshot of Navigation Menu on Page](/assets/uploads/help_menus.png)
 
 See below for some details about each of these ...
 
@@ -34,7 +31,6 @@ Here is where the important stuff lives.  We will give you a bit of an overview 
 ### News
 
 Clicking on the News menu will take you to running list of news-worthy items.  You are welcome to contribute to this area, simply send us what you want to post.   This is not intended to be a community bulletin board, you can do that on Facebook or [nextdoor Cornwallis](https://nextdoor.com/news_feed/?profile_id=62313420)
-
 
 ### For Sale/Free
 
@@ -63,7 +59,6 @@ Information about the board, some of their thoughts on CNA.  Check it out regula
 ### Sponsors
 
 And last but not least, please visit our sponsors and share with your friends.  If a sponsor has a website, you can typically just click on their business card and whoosh, you are there.   If not, you might find yourself ready to send an email after clicking.  Try'em all, never know what it might do.  They are supporting the CNA effort so if you can support them, fantastic.
-
 
 # Tips on getting around
 
