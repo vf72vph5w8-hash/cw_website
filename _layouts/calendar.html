@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% include head.html %}
+<body id="home">
+
+{% include header.html %}
+
+<section id="page-header" class="clearfix">
+  <div class="wrapper">
+    <h1>{{ page.title }}</h1>
+  </div>
+</section>
+
+<div class="wrapper" id="main">
+  <section id="content">
+    
+    <div class="row">
+      {{ page.intro_text | markdownify }}
+    </div>
+
+    {% if page.calendar_url %}
+    <div class="row" style="margin-top: 30px; text-align: center;">
+      <div class="iframe-wrapper" style="position: relative; overflow: hidden; width: 100%; max-width: 800px; display: inline-block;">
+        <iframe 
+          src="{{ page.calendar_url }}" 
+          style="border: 0;" 
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Append sponsors to the bottom if set -->
+    {% if page.sponsors == "bottom" %}
+    <div class="row" style="padding:25px 25px;">
+      <div class="grid_6"></div>
+      <div class="grid_6">
+        {% include sponsors.html %}
+      </div>
+    </div>
+    {% endif %}
+
+  </section>
+</div>
+
+{% include footer.html %}
+</body>
+</html>

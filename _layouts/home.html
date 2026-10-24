@@ -10,36 +10,43 @@
     <!-- responsive FlexSlider image slideshow -->
     <div class="wrapper">
       <div class="row">
-         <h1 style="text-align:center"><img src="/images/CornwallisLetterhead.png" class="center" alt="Cornwallis Neighboorhood Association"></h1>
+         <h1 style="text-align:center"><img src="/images/CornwallisLetterhead.png" class="center" alt="{{page.title}}"></h1>
       </div>
-      <div class="row">
-         <p/>
-         <div class="grid_6">
-           <h1></h1>
-           <p>The prestigious Cornwallis community is located just off the Caloosahatchee on Cape Coral’s east coast. Our canals offer direct (unrestricted) sailboat and powerboat access to the Caloosahatchee River and Gulf. By boat it is a very short run to the river and the open waters of the Gulf. Cornwallis Neighborhood Association (CNA) was formed in 1994 with its main purpose dedicated to the improvement and enjoyment of our neighborhood and maintaining all its spectacular beauty and surroundings. CNA membership is voluntarily and consists of residents, whether owners and or renters, seasonal and permanent, who are committed to and wish to enhance and preserve the beauty, fellowship, and safety of the neighborhood. Our activities, social gatherings, and general meetings are typically held October thru May. Our general meetings are held at Century 21 Birchwood Realty building located at 4040 Del Prado Blvd @ 7:15 pm. We encourage you to take the time to learn more about becoming a member.</p>
-           <div class="flexslider">
-             <ul class="slides">
-              {% for slide in page.slides %}
-                <li>
-                  <img src="{{ slide.img }}"/></a>
-                  <p class="flex-caption">{{ slide.caption }}</p>
-                </li>
-               {% endfor %}
-             </ul>
-           </div><!-- FlexSlider -->
-         </div>
 
-         <div class="grid_6">
-           {% if page.image.feature contains "https://" %}
-             {% assign purl = page.image.feature %}
-           {% else %}
-             {% assign purl = "/images/"|append: page.image.feature %}
-           {% endif %}
-             <img src="{{purl}}" />
-           <p>Cape Coral's scenic waterfront Cornwallis Neighborhood community is in the Gold Coast area and sits east of Del Prado Boulevard between the Cape Coral and Midpoint bridges. The Gold Coast is one of the original areas of Cape Coral that was primarily developed as a waterfront paradise and includes five distinct neighborhoods — Cornwallis, Beach, Palaco Grande, Everest, and Savona. These five communities include an impressive collection of homes and varying styles along with spectacular views of the Caloosahatchee River including some unique panoramas across the river (1-1.5 mile wide) to the Fort Myers coastline.</p>
-              <p><a href="{{page.button1.link}}" class="buttonlink">{{page.button1.text}}</a> <a href="{{page.button2.link}}" class="buttonlink">{{page.button2.text}}</a></p>
+
+
+
+      {% assign section1 = page.split_section_1 %}
+      {% if section1 %}
+        <div class="row">
+            <div class="grid_6">
+                {{section1.content | markdownify}}
+            </div>
+            <div class="grid_6">
+                {% if section1.image %}
+                    <img src="{{ section1.image }}" alt="{{ section1.title }}">
+                {% endif %}
+            </div>
+        </div>
+      {% endif %}
+
+      {% assign section2 = page.split_section_2 %}
+      {% if section2 %}
+          <div class="row">
+              <div class="grid_6">
+                  <div class="flexslider">
+                      <ul class="slides">
+                          {% for image_path in section2.slideshow_images %}
+                            <li><img src="{{ image_path }}" alt="Slideshow Image"></li>
+                        {% endfor %}
+                      </ul>
+                  </div>
+              </div>
+              <div class="grid_6">
+                  {{ section2.content | markdownify }}
+              </div>
           </div>
-       </div><!-- end row -->
+      {% endif %}
 </section><!-- end hero area -->
 
 <!-- main content area -->
@@ -47,30 +54,60 @@
 
 <!-- content area -->
 <section id="content">
-  <div class="row">
-    <div class="grid_12">
-      {{ content }}
+
+
+
+
+
+
+
+    {% if page.mid_page_announcements %}
+      <div class="row">
+          <div class="grid_12">
+        {% for slug in page.mid_page_announcements %}
+            {% assign target = slug | append: '.md' %}
+            {% assign ann = site.announcements | where: "name", target | first %}
+            {% if ann %}
+                <div class="announcement">
+                  <h2>{{ ann.title }}</h2>
+                  <p>{{ ann.content | markdownify }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+          </div>
+      </div>
+    {% endif %}
+
+
+    {% if page.bottom_row_announcements %}
+      <div class="row">
+        {% for slug in page.bottom_row_announcements %}
+            {% assign target = slug | append: '.md' %}
+            {% assign ann = site.announcements | where: "name", target | first %}
+            {% if ann %}
+                <div class="grid_4">
+                  <h2>{{ ann.title }}</h2>
+                  {% if ann.image %}
+                    <img src="{{ ann.image }}" alt="{{ ann.title }}">
+                  {% endif %}
+                  <p>{{ ann.content | markdownify }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="grid_6">
+            {% include sponsors.html %}
+        </div>
     </div>
 
-  </div>
 
-  <div class="row">
-    {% for topic in page.topics %}
-      <div class="grid_{{page.grid_style}}">
-        <h1 class="first-header">{{ topic.title }} </h1>
-        {% if topic.title contains "Sponsors" %}
-        {% include sponsors.html %}
-        {% else %}
-          <img src="{{ topic.img }}" />
-          <p>{{topic.content}}</p>
-        {% endif %}
-      </div>
-      {% endfor %}
-   </div><!-- end row -->
 
-     <div class="grid_4">
-     </div><!-- end grid -->
-   </div>
+
+
 </section><!-- end content area -->
 
 

@@ -1,0 +1,369 @@
+# admin/config.yml
+
+backend:
+  name: github
+  repo: vf72vph5w8-hash/cw_website
+  branch: main
+  base_url: https://cna-final-oauth.bryan-decap-proxy.workers.dev
+  auth_endpoint: /auth
+  site_domain: localhost:4000
+  client_id: Ov23libWLZyB52QqJPgN
+
+media_folder: 'assets/uploads'
+public_folder: '/assets/uploads'
+
+collections:
+  - name: 'posts'
+    label: 'Neighborhood News'
+    folder: '_posts/'
+    media_folder: '{{media_folder}}/news'
+    public_folder: '{{public_folder}}/news'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
+    editor:
+      preview: true
+    fields:
+      - { label: 'Article Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD HH:mm', date_format: 'YYYY-MM-DD', time_format: 'HH:mm' }
+      - { label: 'Body', name: 'body', widget: 'richtext' }
+      - { label: 'Feature on Homepage?', name: 'featured', widget: 'boolean', default: false }
+      - { label: 'Article Feature Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Short Teaser Excerpt', name: 'excerpt', widget: 'text', required: false, hint: 'A one-sentence preview displayed on the feed cards.' }
+
+  - name: 'board'
+    label: 'Board Members'
+    folder: '_board/'
+    media_folder: '{{media_folder}}/board'
+    public_folder: '{{public_folder}}/board'
+    create: true
+    slug: '{{position}}'
+    summary: '{{position}} — {{firstName}} {{lastName}}'
+    identifier_field: 'position'
+
+    format: 'yaml-frontmatter'
+
+    editor:
+      preview: true
+    fields:
+      - label: 'Position'
+        name: 'position'
+        widget: 'select'
+        options:
+          - { label: 'President', value: 'president' }
+          - { label: 'Vice-President', value: 'vicepresident' }
+          - { label: 'Secretary', value: 'secretary' }
+          - { label: 'Treasurer', value: 'treasurer' }
+      - { label: 'First Name', name: 'firstName', widget: 'string' }
+      - { label: 'Last Name', name: 'lastName', widget: 'string' }
+      - { label: 'Street Address', name: 'address', widget: 'string', required: false }
+      - { label: 'Phone Number', name: 'phone', widget: 'string', required: false }
+      - { label: 'Email Address', name: 'email', widget: 'string', required: false }
+
+      - label: 'Profile Picture'
+        name: 'image'
+        widget: 'object'
+        required: false
+        fields:
+          - { label: 'Feature Image File', name: 'feature', widget: 'image', required: false }
+
+      # Retains your semantic 'message' parameter naming structure
+      - label: 'Official Message / Statement'
+        name: 'message'
+        widget: 'richtext'
+
+  - name: 'site_documents'
+    label: 'Association Documents'
+    delete: false # Prevents volunteers from accidentally deleting the file node
+    files:
+      - file: '_data/documents.yml'
+        label: 'Manage Google Drive Links'
+        name: 'drive_links'
+        fields:
+          - label: 'Documents Location Links'
+            name: 'documents'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Document/Folder Title', name: 'title', widget: 'string', hint: 'e.g., Agendas, Meeting Minutes, By-Laws' }
+              - { label: 'Google Drive Sharing URL', name: 'url', widget: 'string' }
+
+  - name: 'calendar'
+    label: 'Community Events'
+    folder: '_events/'
+    media_folder: '{{media_folder}}/events'
+    public_folder: '{{public_folder}}/events'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+
+    format: 'yaml-frontmatter'
+
+    summary: '{{title}} — {{start_time}}'
+    identifier_field: 'title'
+    editor:
+      preview: true
+
+    fields:
+      - { label: 'Event Name / Title', name: 'title', widget: 'string' }
+      - { label: 'Feature on Homepage?', name: 'featured', widget: 'boolean', default: false, hint: 'Check this box to pin this card directly to the homepage feed.' }
+      - { label: 'Event Details / Description', name: 'description', widget: 'richtext' }
+      - { label: 'Short Summary / Excerpt', name: 'summary', widget: 'text', required: false, hint: 'A short one or two sentence hook displayed on card feeds. Leave blank to omit.' }
+      - { label: 'Event Banner Image', name: 'image', widget: 'image', required: false, hint: 'Upload an event graphic or photo. Leave blank to omit.' }
+      - { label: 'Start Date & Time', name: 'start_time', widget: 'datetime', format: 'YYYY-MM-DD HH:mm', date_format: 'YYYY-MM-DD', time_format: 'HH:mm' }
+      - { label: 'End Date & Time (Optional)', name: 'end_time', widget: 'datetime', format: 'YYYY-MM-DD HH:mm', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'Event Location', name: 'location', widget: 'string', hint: 'e.g., SE 29th Street Cul-de-sac, or Birchwood Realty Bldg' }
+      - label: 'Event Contacts / Coordinators'
+        name: 'contacts'
+        widget: 'list'
+        required: false
+        summary: '{{fields.name}}'
+        fields:
+          - { label: 'Contact Name', name: 'name', widget: 'string', hint: 'e.g., Suzie, or Mary Ellen Saba' }
+          - { label: 'Phone Number', name: 'phone', widget: 'string', required: false }
+          - { label: 'Email Address', name: 'email', widget: 'string', required: false }
+
+  - name: 'sales'
+    label: 'For Sale / Free / Classifieds'
+    folder: '_sales/'
+    media_folder: '/assets/uploads/sales/'
+    public_folder: '/assets/uploads/sales/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    format: 'yaml-frontmatter'
+    summary: '{{title}}'
+    identifier_field: 'title'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Listing Title / What is the Offer?', name: 'title', widget: 'string' }
+      - { label: 'Preview Image', name: 'thumbnail', widget: 'image', required: false, hint: 'Small image shown in the listings grid.' }
+      - { label: 'Expiration Date (Optional)', name: 'expiration_date', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: 'HH:mm', required: false }
+      - { label: 'Listing Details & Contact Info', name: 'description', widget: 'richtext' }
+
+  - name: 'useful_links'
+    label: 'Useful Links'
+    delete: false
+    files:
+      - file: '_data/links.yml'
+        label: 'Manage Useful Links'
+        name: 'links_manager'
+        fields:
+          - label: 'Links Directory Categories'
+            name: 'categories'
+            widget: 'list'
+            summary: '{{fields.category_title}}'
+            fields:
+              - { label: 'Category Heading', name: 'category_title', widget: 'string', hint: 'e.g., STATE OF FLORIDA, LEE COUNTY, CAPE CORAL, PUBLIC SAFETY' }
+              - label: 'Hyperlinks List'
+                name: 'links_list'
+                widget: 'list'
+                summary: '{{fields.link_label}}'
+                fields:
+                  - { label: 'Link Text / Label', name: 'link_label', widget: 'string', hint: 'e.g., Cape Coral Police, Lee County Schools' }
+                  - { label: 'Destination URL', name: 'url', widget: 'string', hint: 'e.g., https://capecoral.net...', required: false }
+                  - { label: 'Phone Number', name: 'phone', widget: 'string', required: false }
+
+  - name: 'sponsors_gallery'
+    label: 'Sponsors Directory'
+    delete: false
+    files:
+      - file: '_data/sponsors.yml'
+        label: 'Manage Sponsors'
+        name: 'sponsors_manager'
+        media_folder: 'assets/uploads/sponsors'
+        public_folder: '/assets/uploads/sponsors'
+        fields:
+          - label: 'Sponsors'
+            name: 'sponsors'
+            widget: 'list'
+            summary: '{{fields.company_name}}'
+            fields:
+              - { label: 'Company Name', name: 'company_name', widget: 'string', hint: 'e.g., Royal Shell, Cafe YOU, Quality Pest Control' }
+              - { label: 'Contact Person Name', name: 'contact_name', widget: 'string', required: false, hint: 'e.g., Mark M. Steinberg, Donald Burns' }
+              - { label: 'Business Telephone Number', name: 'phone', widget: 'string', required: false }
+              - { label: 'Business Email Address', name: 'email', widget: 'string', required: false }
+              - { label: 'Website / Ad Destination URL', name: 'url', widget: 'string', required: false }
+              - { label: 'Sponsor Ad Graphic / Logo File', name: 'logo', widget: 'image', required: false, hint: 'Upload ad banner image.' }
+
+  - name: 'photos'
+    label: 'Photo Albums & Galleries'
+    folder: '_photos/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    media_folder: '{{media_folder}}/photos'
+    public_folder: '/assets/uploads/photos'
+    format: 'yaml-frontmatter'
+    summary: '{{title}}'
+    identifier_field: 'title'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout Override', name: 'layout', widget: 'hidden', default: 'album_item' }
+      - { label: 'Album / Project Title', name: 'title', widget: 'string', hint: 'e.g. Halloween 2026' }
+      - { label: 'External Album Link', name: 'external_url', widget: 'string', hint: 'Paste the shared Google Photos link here.' }
+      - { label: 'Album Thumbnail Cover', name: 'thumbnail', widget: 'image', required: false, hint: 'Upload an image to represent this album folder view.' }
+
+  - name: 'announcements'
+    label: 'Announcements'
+    folder: '_announcements/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    format: 'yaml-frontmatter'
+    summary: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'richtext' }
+      - { label: 'Image (Optional)', name: 'image', widget: 'image',
+          media_folder: '{{media_folder}}/announcements',
+          public_folder: '{{public_folder}}/announcements', required: false }
+      - { label: 'Link URL (Optional)', name: 'link', widget: 'string', required: false }
+      - { label: 'Active', name: 'active', widget: 'boolean', default: true, required: false }
+
+  - name: 'page_content'
+    label: 'Page Content'
+    create: false
+    delete: false
+    files:
+      - file: 'news.md'
+        label: 'News Page'
+        name: 'news_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Header Image', name: 'header_image', widget: 'image',
+              media_folder: '{{media_folder}}/pages',
+              public_folder: '{{public_folder}}/pages' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
+              hint: 'The paragraph shown above the news.' }
+      - file: 'sales.md'
+        label: 'For Sale / Free Page'
+        name: 'sales_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Header Image', name: 'header_image', widget: 'image',
+              media_folder: '{{media_folder}}/pages',
+              public_folder: '{{public_folder}}/pages' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
+              hint: 'The paragraph shown above the listings.' }
+      - file: 'calendar.md'
+        label: 'Calendar Page'
+        name: 'calendar_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
+              hint: 'The paragraph shown above the listings.' }
+          - { label: 'Calendar URL', name: 'calendar_url', widget: 'string' }
+      - file: 'membership.md'
+        label: 'Membership Page'
+        name: 'membership_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Header Image', name: 'header_image', widget: 'image',
+              media_folder: '{{media_folder}}/pages',
+              public_folder: '{{public_folder}}/pages' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
+              hint: 'The paragraph shown above the listings.' }
+          - { label: 'Google Forms Embed URL', name: 'google_form_url', widget: 'string',
+              hint: 'The URL to embed a Google Form.' }
+          - { label: 'PDF Form Title', name: 'pdf_form_title', widget: 'string',
+              hint: 'The heading above the PDF form.' }
+          - { label: 'PDF Form File', name: 'pdf_form_file', widget: 'file',
+              hint: 'The PDF form file.' }
+      - file: 'photos.md'
+        label: 'Photos Page'
+        name: 'photos_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
+              hint: 'The paragraph shown above the listings.' }
+          - label: 'Featured Photo Album'
+            name: 'featured_album'
+            widget: 'relation'
+            collection: 'photos'
+            search_fields: ['title']
+            value_field: 'title'
+            display_fields: ['title']
+            required: false
+            hint: 'Choose an album from the list to display it prominently at the top of the galleries page.'
+
+      - file: 'aboutus.md'
+        label: 'About Us Page'
+        name: 'aboutus'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext', required: false }
+          - label: 'Board Members'
+            name: 'board_members'
+            widget: 'list'
+            required: false
+            fields:
+              - label: 'Member'
+                name: 'member'
+                widget: 'relation'
+                collection: 'board'
+                search_fields: ['firstName', 'lastName', 'position']
+                display_fields: ['firstName', 'lastName', 'position']
+                value_field: 'position'
+      - file: 'index.md'
+        label: 'Home Page'
+        name: 'home'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - label: 'Split Section 1 (Image & Text)'
+            name: 'split_section_1'
+            widget: 'object'
+            required: false
+            fields:
+              - { label: 'Content Paragraph', name: 'content', widget: 'richtext', hint: 'Type content here. Use the custom "Button Link" toolbar item to drop buttons.' }
+              - { label: 'Feature Image', name: 'image', widget: 'image' }
+          - label: 'Split Section 2 (Slideshow & Text)'
+            name: 'split_section_2'
+            widget: 'object'
+            required: false
+            fields:
+              - { label: 'Content Paragraph', name: 'content', widget: 'richtext' }
+              - label: 'Slideshow Images Gallery'
+                name: 'slideshow_images'
+                widget: 'list'
+                summary: '{{fields.slide}}'
+                field: { label: 'Upload Slide Image', name: 'slide', widget: 'image' }
+          - label: 'Mid-Page Announcements'
+            name: 'mid_page_announcements'
+            widget: 'relation'
+            collection: 'announcements'
+            multiple: true
+            search_fields: ['title']
+            value_field: '{{slug}}'
+            display_fields: ['title', 'body']
+
+          - label: 'Bottom-Row Announcements'
+            name: 'bottom_row_announcements'
+            widget: 'relation'
+            collection: 'announcements'
+            multiple: true
+            min: 0
+            max: 3
+            search_fields: ['title']
+            value_field: '{{slug}}'
+            display_fields: ['title', 'image', 'body']
+
+
+
+      - file: 'issues.md'
+        label: 'Issues Page'
+        name: 'issues'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext', required: false }
+          - { label: 'Google Forms Embed URL', name: 'google_form_url', widget: 'string' }
+      - file: 'links.md'
+        label: 'Links Page'
+        name: 'links'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext' }
+      - file: 'sponsors.md'
+        label: 'Sponsors Page'
+        name: 'sponsors'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Intro Text', name: 'intro_text', widget: 'richtext', required: false }

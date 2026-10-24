@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<!-- This is the top of every html page, not the menu header -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>
+  
+    debug
+  
+</title>
+<meta name="description" content="Everything you always wanted to know, but there wasn't a website ... till now">
+<meta name="keywords" content="">
+
+<!-- Mobile viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<link rel="shortcut icon" href="/images/favicon.ico"  type="image/x-icon">
+
+<!-- CSS-->
+<!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/js/flexslider/flexslider.css">
+<link rel="stylesheet" href="/css/basic-style.css">
+
+<!-- end CSS-->
+
+<!-- JS-->
+<script src="/js/libs/modernizr-2.6.2.min.js"></script>
+
+<!-- end JS-->
+
+<script>
+function printImg(url) {
+  var win = window.open('');
+  win.document.write('<img src="' + url + '" onload="window.print();window.close()" />');
+  win.focus();
+}
+</script>
+
+</head>
+
+
+<div id="background">
+  <a href="/help.html"><img src="/images/help.png" width="90px" height="45px"><p>Help!!!</a>
+
+</div>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-195022370-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-195022370-1');
+</script>
+
+<body id="home">
+
+<!-- header area -->
+<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
+
+
+
+
+<header class="wrapper clearfix">
+
+        <!-- main navigation -->
+        <nav id="topnav" role="navigation">
+          <div class="menu-toggle">Menu</div>
+          <ul class="srt-menu" id="menu-main-navigation">
+              <li class="current"><a href="/index.html">Home page</a></li>
+              <li ><a href="/news.html">News</a></li>
+              <li ><a href="/sales.html">For Sale/Free</a></li>
+              <li ><a href="/calendar.html">Calendar</a></li>
+              <li ><a href="/membership.html">Membership</a></li>
+              <li ><a href="/photos.html">Photos</a></li>
+              <li >
+                  <a href="/aboutus.html#board"">About Us</a>
+                  <ul>
+                      <li><a href="/aboutus.html#board">Board</a></li>
+                      <li><a href="/aboutus.html#documents">Documents</a></li>
+                      <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
+                      <li><a href="/issues.html">Report an issue</a></li>
+                  </ul>
+              </li>
+              <li  >
+                  <a href="/links.html">Useful links</a>
+              </li>
+              <li  >
+                  <a href="/sponsors.html">Sponsors</a>
+              </li>
+          </ul>
+		</nav><!-- end main navigation -->
+        <!-- <div id="banner">
+        	<div id="logo"><a href="/index.html"><img src="/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
+        </div> -->
+
+    </header><!-- end header -->
+
+<!-- end header -->
+
+
+<section id="page-header" class="clearfix">
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+	<h1></h1>
+    </div>
+
+</section>
+
+
+<!-- main content area -->
+  <div class="wrapper" id="main">
+    
+           
+             <img src="/images/basic-logo.png" width="100%" />
+    
+<!-- content area -->
+    <section id="content" >
+      <!-- sponsors: off -->
+      
+      
+      
+      <!-- off -->
+      <div class="row">
+        
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">variable</th>
+      <th style="text-align: left">value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">site.url</td>
+      <td style="text-align: left">http://localhost:4000</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">site.baseurl</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">link with baseurl</td>
+      <td style="text-align: left"><a href="/images/basic-logo.png"> basic-logo.png</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">leading slash</td>
+      <td style="text-align: left"><a href="/images/basic-logo.png"> basic-logo.png</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">no leading slash</td>
+      <td style="text-align: left"><a href="images/basic-logo.png"> basic-logo.png</a></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">site.grid_styles</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">site.tags</td>
+      <td style="text-align: left">{“general,garagesale” =&gt; [#&lt;Jekyll::Document _posts/2021-05-25-sale1.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-01-26-post2.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-01-26-example-post.md collection=posts&gt;], “general” =&gt; [#&lt;Jekyll::Document _posts/2021-10-15-openpositions.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-10-12-fertilizer.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-06-28-karla.md collection=posts&gt;], “general,holiday” =&gt; [#&lt;Jekyll::Document _posts/2022-03-15-block-party-review.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-11-11-garagesale.md collection=posts&gt;, #&lt;Jekyll::Document _posts/2021-10-15-halloween.md collection=posts&gt;], “general,block” =&gt; [#&lt;Jekyll::Document _posts/2021-11-11-BlockParty.md collection=posts&gt;], “party” =&gt; [#&lt;Jekyll::Document _posts/2021-11-11-BlockParty.md collection=posts&gt;], “general,holiday,garagesale” =&gt; [#&lt;Jekyll::Document _posts/2022-03-03-garage_sale.md collection=posts&gt;]}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>“/images/”</td>
+          <td>append: page.image.feature | relative_url is ‘/images/basic-logo.png’</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>page.image.feature | relative_url is ‘/basic-logo.png’</li>
+</ul>
+
+      </div>
+      
+    </section><!-- #end content area -->
+
+
+    <!-- sidebar -->
+    
+
+  </div><!-- #end div #main .wrapper -->
+
+<!-- footer area -->
+<footer>
+	<div id="colophon" class="wrapper clearfix">
+    <!-- PAGEHITID: page__debug -->
+    <!-- <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fcornwallisna%2Fcw_website%2Fhit-counter-page__debug" alt="Stats" style="display: none;"></a> -->&nbsp; Page created by <a href="mailto:fcassirer@gmail.com">Fred Cassirer</a>,
+      <a href="/issues.html">click here to open a new problem report</a>.  To list existing reports, <a href="https://github.com/cornwallisna/cw_website//issues">click here</a>
+      <p>&nbsp; Site last updated at: October 23, 2026 23:33 EDT</p>
+
+    </div>
+
+<!--You can NOT remove this attribution statement from any page, unless you get the permission from prowebdesign.ro--><div id="attribution" class="wrapper clearfix" style="color:#666; font-size:11px;">Site built with <a href="http://www.prowebdesign.ro/simple-responsive-template/" target="_blank" title="Simple Responsive Template is a free software by www.prowebdesign.ro" style="color:#777;">Simple Responsive Template</a> by <a href="http://www.prowebdesign.ro/" target="_blank" title="www.prowebdesign.ro" style="color:#777;">Prowebdesign.ro</a></div><!--end attribution-->
+
+</footer><!-- #end footer area -->
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+
+<script defer src="/js/flexslider/jquery.flexslider-min.js"></script>
+
+<!-- fire ups - read this file!  -->
+
+<script>
+
+// Fireup the plugins
+$(document).ready(function(){
+
+	// initialise  slideshow
+	 $('.flexslider').flexslider({
+         animation: "slide",
+         pauseOnHover: true,
+         slideshowSpeed: 7000,
+         randomize: true,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+
+});
+/**
+ * Handles toggling the navigation menu for small screens.
+ */
+( function() {
+	var button = document.getElementById( 'topnav' ).getElementsByTagName( 'div' )[0],
+	    menu   = document.getElementById( 'topnav' ).getElementsByTagName( 'ul' )[0];
+
+	if ( undefined === button )
+		return false;
+
+	// Hide button if menu is missing or empty.
+	if ( undefined === menu || ! menu.childNodes.length ) {
+		button.style.display = 'none';
+		return false;
+	}
+
+	button.onclick = function() {
+		if ( -1 == menu.className.indexOf( 'srt-menu' ) )
+			menu.className = 'srt-menu';
+
+		if ( -1 != button.className.indexOf( 'toggled-on' ) ) {
+			button.className = button.className.replace( ' toggled-on', '' );
+			menu.className = menu.className.replace( ' toggled-on', '' );
+		} else {
+			button.className += ' toggled-on';
+			menu.className += ' toggled-on';
+		}
+	};
+} )();
+
+</script>
+
+
+</body>
+</html>

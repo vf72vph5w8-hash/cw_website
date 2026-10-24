@@ -1,0 +1,99 @@
+{% include head.html %}
+<body id="home">
+
+{% include header.html %}
+
+<section id="page-header" class="clearfix">
+  <div class="wrapper">
+    <h1>{{ page.title | default: "Useful Links" }}</h1>
+  </div>
+</section>
+
+<div class="wrapper" id="main">
+  <section id="content">
+    <div class="row">
+
+      <!-- 1. OPTIONAL MAIN PAGE INTRO TEXT -->
+      {% if page.intro_text %}
+        <div class="intro-block" style="margin-bottom: 35px; line-height: 1.7; color: #4a5568;">
+          {{ page.intro_text | markdownify }}
+        </div>
+      {% endif %}
+
+      <!-- 2. USEFUL LINKS DIRECTORY GRID -->
+      <div class="links-directory-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; align-items: start;">
+        
+        <!-- Loop through categories inside _data/links.yml -->
+        {% for cat in site.data.links.categories %}
+          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+            
+            <!-- Category Title Header -->
+            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+              {{ cat.category_title }}
+            </h3>
+
+            <!-- Links Nested Roster Loop -->
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              {% for item in cat.links_list %}
+                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
+                  
+                  <!-- Link Action Text -->
+                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
+                    {% if item.url %}
+                      <a href="{{ item.url }}" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                        {{ item.link_label }} <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
+                      </a>
+                    {% else %}
+                      {{ item.link_label }}
+                    {% endif %}
+                  </div>
+
+                  <!-- Direct Mobile Dial Phone Support Line -->
+                  {% if item.phone %}
+                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
+                      📞 <a href="tel:{{ item.phone | replace: '-', '' | replace: ' ', '' | replace: '(', '' | replace: ')', '' }}" style="color: #718096; text-decoration: none;">
+                        {{ item.phone }}
+                      </a>
+                    </div>
+                  {% endif %}
+
+                </li>
+              {% endfor %}
+            </ul>
+
+          </div>
+        {% endfor %}
+      </div>
+
+      
+
+    </div>
+    <div class="row" style="padding:25px 25px;">
+        <div class="grid_6">
+        </div>
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+  </section>
+
+  <!-- Sidebar Component Menu Selection Links -->
+  {% if page.sidemenu %}
+    <aside>
+      <h2>{{ page.sidemenu.title }}</h2>
+      <nav id="secondary-navigation">
+        <ul>
+          {% assign li = '<li class="current">' %}
+          {% for item in page.sidemenu.menuitems %}
+            {{ li }}<a href="{{ item.link }}">{{ item.text }}</a></li>
+            {% assign li = "<li>" %}
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
+  {% endif %}
+</div>
+
+{% include footer.html %}
+</body>
+</html>

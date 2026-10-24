@@ -1,0 +1,78 @@
+<!-- CURRENT LAYOUT: BOARD_MEMBER -->
+<!DOCTYPE html>
+
+{% include head.html %}
+<body id="home">
+
+<!-- header area -->
+{% include header.html %}
+<!-- end header -->
+
+
+<section id="page-header" class="clearfix">
+  <!-- responsive FlexSlider image slideshow -->
+  <div class="wrapper">
+    <h1>{{ page.position | capitalize }}'s Message</h1>
+  </div>
+
+</section>
+
+
+<!-- main content area -->
+  <div class="wrapper" id="main">
+ 
+<!-- content area -->
+    <section id="content" >
+      {% if page.sponsors == "bottom" %}
+      <div class="row">
+        {{ page.message | markdownify }}
+      </div>
+      <div class="row" style="padding:25px 25px;">
+        <div class="grid_6">
+        </div>
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      {% endif %}
+      {% if page.sponsors == "top" %}
+      <div class="row" style="padding:50px 50px;">
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+      {% if page.sponsors == "off" %}
+      <!-- {{ page.sponsors }} -->
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+    </section><!-- #end content area -->
+
+
+    <!-- sidebar -->
+    {% if page.sidemenu %}
+    <aside>
+        <h2>{{page.sidemenu.title}}</h2>
+            <nav id="secondary-navigation">
+              <ul>
+                {% assign li = '<li class="current">' %}
+                {% for item in page.sidemenu.menuitems %}
+                    {{li}}<a href="{{item.link}}">{{item.text}}</a></li>
+                    {% assign li = "<li>" %}
+                {% endfor %}
+              </ul>
+             </nav>
+      </aside><!-- #end sidebar -->
+    {% endif %}
+
+  </div><!-- #end div #main .wrapper -->
+
+{% include footer.html %}
+
+</body>
+</html>

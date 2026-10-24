@@ -1,0 +1,50 @@
+<!-- admin/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <!-- Include the identity widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+    CMS.registerEditorComponent({
+      id: "button_link",
+      label: "Button Link",
+      fields: [
+        { label: "Button Text", name: "text", widget: "string" },
+        { label: "Destination URL", name: "url", widget: "string" }
+      ],
+      pattern: /^\[(.+?)\]\((.+?)\)\{\:\ \.button\ \}$/,
+      fromBlock: function(match) {
+        return { text: match[1], url: match[2] };
+      },
+      toBlock: function(obj) {
+        return `[${obj.text}](${obj.url}){: .buttonlink }`;
+      },
+      toPreview: function(obj) {
+        return '<a href="' + obj.url + '" class="buttonlink">' + obj.text + '</a>';
+      }
+    });
+    </script>
+
+
+    <script src="/admin/previews/styles.js"></script>
+    <script src="/admin/previews/board.js"></script>
+    <script src="/admin/previews/documents.js"></script>
+    <script src="/admin/previews/linkspage.js"></script>
+    <script src="/admin/previews/calendar.js"></script>
+    <script src="/admin/previews/news.js"></script>
+    <script src="/admin/previews/sales.js"></script>
+    <script src="/admin/previews/membership.js"></script>
+    <script src="/admin/previews/photos.js"></script>
+    <script src="/admin/previews/aboutus.js"></script>
+    <script src="/admin/previews/issues.js"></script>
+    <script src="/admin/previews/links.js"></script>
+
+  </body>
+</html>

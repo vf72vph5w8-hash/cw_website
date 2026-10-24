@@ -10,7 +10,7 @@ slides:
     phone: 239-839-8466
     email: medi.sandra.wall@gmail.com
     link: https://Insuranceoptionsfl.com
-    name: Specializing in Medicare Products    
+    name: Specializing in Medicare Products
   - img: /images/ads/QualityPest.jpg
     caption: Donald Burns, Quality Pest Control
     phone: 239-540-2359
@@ -39,3 +39,47 @@ slides:
     name: CNA
     email: cornwallisna+ads@gmail.com
     link: https://cornwallisna.org/aboutus
+sponsors:
+  - weight: 1
+    company_name: Royal Shell Real Estate
+    contact_name: Sandra Wall
+    phone: 239-839-8466
+    email: Realtor.Sandra.Wall@gmail.com
+    url: https://sandrawall.royalshellrealestate.com
+    logo: /assets/uploads/sponsors/royalshell2.png
+  - weight: 1
+    company_name: Insurance Options Inc.
+    contact_name: Sandra Wall
+    phone: (239) 839-8466
+    email: medi.sandra.wall@gmail.com
+    url: https://insuranceoptionsfl.com/
+    logo: /assets/uploads/sponsors/sandrawall2.png
+  - weight: 1
+    company_name: Quality Pest Control
+    contact_name: Donald Burns
+    phone: 239-540-2359
+    email: qualitypestswfl@gmail.com
+    url: https://www.qualitypestcontrolswfl.com
+    logo: /assets/uploads/sponsors/6cf9e346-261d-45da-93ac-1249db5356e4.jpg
+  - company_name: Fremar Construction
+    contact_name: Mark M. Steinberg
+    phone: 239-549-8681
+    email: markms@capecoralbuilder.net
+    url: https://www.fremarhomes.com
+    logo: /assets/uploads/sponsors/a18e1938-0754-42f7-bac7-f356d29e3496.png
+  - company_name: Ann Vaughn @ Century 21
+    contact_name: Ann Vaughn REALTOR
+    phone: 239-671-9271
+    email: annvaughnrealtor@gmail.com
+    url: https://annvaughn.swfloridaareahomesearch.com/
+    logo: /assets/uploads/sponsors/1e435fc5-9626-4ea6-8b1f-4b976f971f8d.png
+  - company_name: Cafe YOU
+    phone: 239-233-6912
+    email: ""
+    url: https://www.cafeyou.com/
+    logo: /assets/uploads/sponsors/33c6cbd7-df56-4349-a44f-4141c7d9af71.png
+  - company_name: CNA
+    contact_name: Contact us to list your company, $80/yr
+    email: cornwallisna+ads@gmail.com
+    url: https://cornwallisna.org/aboutus
+    logo: /assets/uploads/sponsors/7483b7ef-5a17-4cb1-89ee-9bd34a46a18a.jpg

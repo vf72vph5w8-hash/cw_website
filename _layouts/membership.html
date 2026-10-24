@@ -1,0 +1,106 @@
+<!-- CURRENT LAYOUT: CONTENT_PAGE -->
+<!DOCTYPE html>
+
+{% include head.html %}
+<body id="home">
+
+<!-- header area -->
+{% include header.html %}
+<!-- end header -->
+
+
+<section id="page-header" class="clearfix">
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+	<h1>{{ page.title }}</h1>
+    </div>
+
+</section>
+
+
+<!-- main content area -->
+  <div class="wrapper" id="main">
+
+<!-- content area -->
+    <section id="content" >
+      <!-- sponsors: {{ page.sponsors }} -->
+      {% if page.sponsors == "bottom" %}
+      <div class="row">
+
+        {% if page.header_image %}
+            {% if page.header_image contains "https://" or page.header_image contains "/assets/" %}
+                {% assign purl = page.header_image %}
+            {% else %}
+                {% assign purl = "/images/" | append: page.header_image %}
+            {% endif %}
+            
+            <img src="{{ purl }}" style="max-width: 100%; height: auto;" />
+        {% endif %}
+
+        {{page.intro_text | markdownify}}
+
+        <iframe src="{{page.google_form_url}}" width="820" height="3800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        
+
+        {% if page.pdf_form_file %}
+            <h2>{{ page.pdf_form_title }}</h2>
+  
+            <div class="pdf-embed-container" style="position: relative; width: 100%; height: 800px; margin-bottom: 30px; border: 1px solid #cbd5e0; border-radius: 6px; overflow: hidden;">
+                <iframe src="{{ page.pdf_form_file }}" width="100%" height="100%" style="border: none;">
+                This browser does not support inline PDFs. Please download the document to view it: 
+                <a href="{{ page.pdf_form_file }}" class="btn" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 10px;">Download PDF Form</a>
+                </iframe>
+            </div>
+        {% endif %}
+
+
+      </div>
+      <div class="row" style="padding:25px 25px;">
+        <div class="grid_6">
+        </div>
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      {% endif %}
+      {% if page.sponsors == "top" %}
+      <div class="row" style="padding:50px 50px;">
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+      {% if page.sponsors == "off" %}
+      <!-- {{ page.sponsors }} -->
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+    </section><!-- #end content area -->
+
+
+    <!-- sidebar -->
+    {% if page.sidemenu %}
+    <aside>
+        <h2>{{page.sidemenu.title}}</h2>
+            <nav id="secondary-navigation">
+              <ul>
+                {% assign li = '<li class="current">' %}
+                {% for item in page.sidemenu.menuitems %}
+                    {{li}}<a href="{{item.link}}">{{item.text}}</a></li>
+                    {% assign li = "<li>" %}
+                {% endfor %}
+              </ul>
+             </nav>
+      </aside><!-- #end sidebar -->
+    {% endif %}
+
+  </div><!-- #end div #main .wrapper -->
+
+{% include footer.html %}
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+---
+topnav: community
+---
+<!-- CURRENT LAYOUT: ARTICLE -->
+<!DOCTYPE html>
+{% include head.html %}
+<body id="article">
+
+<!-- header area -->
+{% include header.html %}
+<!-- end header -->
+
+<section id="page-header" class="clearfix">
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+ <h1>{{ page.title }}</h1>
+</div>
+
+</section>
+
+<section id="content" class="wide-content">
+  <div class="row" style="padding:50px 50px;">
+    <div class="grid_5">
+
+    {% if page.thumbnail %}
+  <div class="post-image-wrapper" style="margin-bottom: 20px;">
+    <!-- Directly outputs the absolute path string Decap CMS wrote -->
+    <img src="{{ page.thumbnail }}" 
+         style="object-fit: cover; border-radius: 6px; max-width: 100%; height: auto;" 
+         alt="{{ page.title }}">
+  </div>
+{% endif %}
+
+    
+	<div class="page-title">
+      <h2>Posted on {{ page.date | date: "%B %d, %Y"}}</h2>
+  	</div>
+
+    {{ page.description | markdownify }}
+
+    {% if page.contact %}
+    {% assign cinfo = page.contact|split: ":" |last %}
+    Contact <a href="{{page.contact}}">{{cinfo}}</a><br/><br/>
+    {% endif %}
+
+     {% if page.previous.url %}
+       <a href="{{site.baseurl}}{{ page.previous.url }}">Previous</a>
+     {% endif %}
+     {% if page.next.url %}
+       <a href="{{site.baseurl}}{{ page.next.url }}">Next</a>
+     {% endif %}
+    </div> <!-- grid_x -->
+
+    {% if page.sponsors == "bottom" %}
+     <div class="grid_4" width="50%">
+       {% include sponsors.html %}
+     </div>
+     {% endif %}
+  </div> <!-- row -->
+
+
+</section><!-- #end content area -->
+
+<!-- sidebar -->
+{% if page.sidemenu %}
+<aside>
+    <h2>{{page.sidemenu.title}}</h2>
+        <nav id="secondary-navigation">
+          <ul>
+            {% assign li = '<li class="current">' %}
+            {% for item in page.sidemenu.menuitems %}
+                {{li}}<a href="{{item.link}}">{{item.text}}</a></li>
+                {% assign li = "<li>" %}
+            {% endfor %}
+          </ul>
+         </nav>
+  </aside><!-- #end sidebar -->
+{% endif %}
+
+{% include footer.html %}
+
+</body>
+</html>

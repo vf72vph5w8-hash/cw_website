@@ -1,0 +1,130 @@
+<!-- CURRENT LAYOUT: CONTENT_PAGE -->
+<!DOCTYPE html>
+
+{% include head.html %}
+<body id="home">
+
+<!-- header area -->
+{% include header.html %}
+<!-- end header -->
+
+
+<section id="page-header" class="clearfix">
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+	<h1>{{ page.title }}</h1>
+    </div>
+
+</section>
+
+
+<!-- main content area -->
+  <div class="wrapper" id="main">
+    {% if page.image.feature %}
+           {% if page.image.feature contains "https://" %}
+             {% assign purl = page.image.feature %}
+           {% else %}
+             {% assign purl = "/images/"|append: page.image.feature %}
+           {% endif %}
+             <img src="{{purl}}" width="{{page.image.feature_width}}" />
+    {% endif %}
+<!-- content area -->
+    <section id="content" >
+      <!-- sponsors: {{ page.sponsors }} -->
+      {% if page.sponsors == "bottom" %}
+      <div class="row">
+
+
+{% if page.featured_album %}
+        {% assign featured = site.photos | where: "title", page.featured_album | first %}
+        {% if featured %}
+          <div class="featured-album-container" style="background: #edf2f7; padding: 35px; border-radius: 8px; margin-bottom: 40px; border-left: 6px solid #3182ce; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <span style="color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em;">⭐ Highlighted Gallery</span>
+            <h2 style="margin: 8px 0 12px 0; font-size: 1.8rem; color: #1a202c;">{{ featured.title }}</h2>
+            <p style="color: #4a5568; margin-bottom: 15px;">Check out the latest featured shots contributed by your neighbors.</p>
+            <a href="{{ featured.external_url }}" target="_blank" class="btn" style="display: inline-block; padding: 10px 20px; background: #3182ce; color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">
+              Open Featured Google Album →
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 40px 0;" />
+
+      <!-- 3. PHOTO ALBUMS GRID -->
+      <h2 style="font-size: 1.6rem; color: #2d3748; margin-bottom: 25px;">Browse Neighborhood Galleries</h2>
+
+      <div class="album-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
+        {% for album in site.photos %}
+          <div class="album-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+
+            <!-- Fallback folder graphic icon if no custom thumbnail image is uploaded -->
+            <div class="album-thumbnail" style="background: #cbd5e0; height: 160px; display: flex; items-align: center; justify-content: center; align-items: center; color: #718096;">
+              {% if album.thumbnail %}
+                <img src="{{ album.thumbnail }}" style="width: 100%; height: 100%; object-fit: cover;" />
+              {% else %}
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              {% endif %}
+            </div>
+
+            <div class="album-body" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+              <h3 style="margin: 0 0 15px 0; font-size: 1.25rem; color: #2d3748; font-weight: 700;">{{ album.title }}</h3>
+              <a href="{{ album.external_url }}" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
+                View Album  →
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+
+      </div>
+      <div class="row" style="padding:25px 25px;">
+        <div class="grid_6">
+        </div>
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      {% endif %}
+      {% if page.sponsors == "top" %}
+      <div class="row" style="padding:50px 50px;">
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+      {% if page.sponsors == "off" %}
+      <!-- {{ page.sponsors }} -->
+      <div class="row">
+        {{ content }}
+      </div>
+      {% endif %}
+    </section><!-- #end content area -->
+
+
+    <!-- sidebar -->
+    {% if page.sidemenu %}
+    <aside>
+        <h2>{{page.sidemenu.title}}</h2>
+            <nav id="secondary-navigation">
+              <ul>
+                {% assign li = '<li class="current">' %}
+                {% for item in page.sidemenu.menuitems %}
+                    {{li}}<a href="{{item.link}}">{{item.text}}</a></li>
+                    {% assign li = "<li>" %}
+                {% endfor %}
+              </ul>
+             </nav>
+      </aside><!-- #end sidebar -->
+    {% endif %}
+
+  </div><!-- #end div #main .wrapper -->
+
+{% include footer.html %}
+
+</body>
+</html>

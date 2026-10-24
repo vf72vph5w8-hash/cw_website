@@ -9,7 +9,7 @@ locale: en_US
 url: "https://cornwallisna.org/index.html"
 # Use 'bundle exec jekyll serve --host 192.168.1.xxx --baseurl ""' to serve locally
 #baseurl: "https://cornwallisna.github.io/cw_website"
-baseurl: "https://cornwallisna.org"
+baseurl: ""
 
 
 timezone: America/New_York
@@ -21,7 +21,7 @@ github_url: "https://github.com/cornwallisna/cw_website/"
 sass:
   sass_dir: _sass
   style: compressed
-permalink: /:categories/:title/
+permalink: /articles/:title/
 kramdown:
   toc_levels: 1..2
 highlighter: rouge
@@ -30,6 +30,125 @@ plugins:
   - jekyll-gist
 
 defaults:
+  -
+    scope:
+      path: "aboutus.md"
+    values:
+      layout: "aboutus"
+      permalink: "/aboutus.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "calendar.md"
+    values:
+      layout: "calendar"
+      permalink: "/calendar.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "index.md"
+    values:
+      layout: "home"
+      permalink: "/index.html"
+      sponsors: "bottom"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "issues.md"
+    values:
+      layout: "issues"
+      permalink: "/issues.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "links.md"
+    values:
+      layout: "links"
+      permalink: "/links.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "membership.md"
+    values:
+      layout: "membership"
+      permalink: "/membership.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "news.md"
+    values:
+      layout: "news"
+      permalink: "/news.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "photos.md"
+    values:
+      layout: "photos"
+      permalink: "/photos.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "sales.md"
+    values:
+      layout: "sales"
+      permalink: "/sales.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
+      path: "sponsors.md"
+    values:
+      layout: "sponsors"
+      permalink: "/sponsors.html"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
   -
     scope:
       path: ""
@@ -48,14 +167,38 @@ defaults:
         slideshowSpeed: 7000
   -
     scope:
+      type: "board"
+    values:
+      layout: "board_member"
+      sponsors: "bottom"
+      background: "help.png"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+  -
+    scope:
       path: ""
       type: "posts"
     values:
+      layout: "article"
       sponsors: "bottom"
       image:
         feature_width: "100%"
       flexslider:
         slideshowSpeed: 7000
+  -
+    scope:
+      path: ""
+      type: "sales"
+    values:
+      layout: "sales_listing"
+      sponsors: "bottom"
+      image:
+        feature_width: "100%"
+      flexslider:
+        slideshowSpeed: 7000
+
 
 
 # Octopress configuration
@@ -87,3 +230,25 @@ owner:
 
 
 exclude: [".#*","lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+include:
+  - assets
+
+collections:
+  board:
+    output: true
+    permalink: /board/:slug/
+
+  sales:
+    output: true
+    permalink: /sales/:slug/
+
+  events:
+    output: true
+    permalink: /events/:slug/
+
+  photos:
+    output: false
+    permalink: /photos/:slug/
+
+  announcements:
+    output: false
