@@ -1,15 +1,10 @@
 ---
-layout: article
 title: "Fertilizer Ordinance"
-categories: articles
-modified: 2021-10-12T11:15:41-04:00
-tags: general
-comments: false
-sponsors: "bottom"
-image:
-  feature: "/images/thumbnail_push_spreader.jpg"
-  teaser: "/images/Water_algae.jpg"
+date: 2021-10-12 11:15
+featured: false
+image: /images/Water_algae.jpg
 ---
+
 
 ## Fertilizer Ordinance
 

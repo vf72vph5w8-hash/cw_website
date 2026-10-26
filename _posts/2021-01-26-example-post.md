@@ -1,15 +1,10 @@
 ---
-layout: article
 title: "Garage sales!!!!!"
-categories: articles
-modified: 2021-01-26T11:30:41-04:00
-tags: general,garagesale
-comments: false
-sponsors: "bottom"
-image:
-  feature: garage-sale.png
-  teaser: /images/garage-sale.png
+date: 2021-01-26 11:30
+featured: false
+image: /images/garage-sale.png
 ---
+
 
 ## Garage Sale, Feb 19-20, 2021
 

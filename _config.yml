@@ -56,6 +56,13 @@ defaults:
         slideshowSpeed: 7000
   -
     scope:
+      path: "help.md"
+    values:
+      layout: "help"
+      permalink: "/help"
+      background: "help.png"
+  -
+    scope:
       path: "index.md"
     values:
       layout: "home"
@@ -143,7 +150,6 @@ defaults:
     values:
       layout: "sponsors"
       permalink: "/sponsors.html"
-      sponsors: "bottom"
       background: "help.png"
       image:
         feature_width: "100%"
@@ -252,3 +258,6 @@ collections:
 
   announcements:
     output: false
+
+  sponsors:
+      output: false

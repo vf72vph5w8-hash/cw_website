@@ -1,45 +1,29 @@
-<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
-{% assign nav = "home,news,overview,calendar,about,sales,links,block,holiday,membership,mail,president,vicepresident,photos,sponsors,issues"|split: "," %}
-{% assign navhigh = ""| split: ',' %}
-{% for c in (0..nav.size) %}
-{%  if page.topnav contains nav[c]  %}
-{%    assign navhigh = navhigh | push: 'class="current"' %}
-{%  else %}
-{%    assign navhigh = navhigh | push: "" %}
-{%  endif %}
-{% endfor  %}
+{% assign current = page.url | remove_first: '/' | remove: '.html' %}
+{% if current == 'index' %}{% assign current = 'home' %}{% endif %}
+{% if current == 'aboutus' %}{% assign current = 'about' %}{% endif %}
+{% if current == 'issues' %}{% assign current = 'about' %}{% endif %}
 
 <header class="wrapper clearfix">
-
-        <!-- main navigation -->
-        <nav id="topnav" role="navigation">
-          <div class="menu-toggle">Menu</div>
-          <ul class="srt-menu" id="menu-main-navigation">
-              <li {{ navhigh[0] }}><a href="{{site.baseurl}}/index.html">Home page</a></li>
-              <li {{ navhigh[1] }}><a href="{{site.baseurl}}/news.html">News</a></li>
-              <li {{ navhigh[5] }}><a href="{{site.baseurl}}/sales.html">For Sale/Free</a></li>
-              <li {{navhigh[3]}}><a href="{{site.baseurl}}/calendar.html">Calendar</a></li>
-              <li {{ navhigh[9] }}><a href="{{site.baseurl}}/membership.html">Membership</a></li>
-              <li {{navhigh[13]}}><a href="{{site.baseurl}}/photos.html">Photos</a></li>
-              <li {{ navhigh[4] }}>
-                  <a href="{{site.baseurl}}/aboutus.html#board"">About Us</a>
-                  <ul>
-                      <li><a href="{{site.baseurl}}/aboutus.html#board">Board</a></li>
-                      <li><a href="{{site.baseurl}}/aboutus.html#documents">Documents</a></li>
-                      <li><a href="mailto:{{site.owner.email}}">Send us an email</a></li>
-                      <li><a href="{{site.baseurl}}/issues.html">Report an issue</a></li>
-                  </ul>
-              </li>
-              <li {{ navhigh[6] }} >
-                  <a href="{{site.baseurl}}/links.html">Useful links</a>
-              </li>
-              <li {{ navhigh[14] }} >
-                  <a href="{{site.baseurl}}/sponsors.html">Sponsors</a>
-              </li>
-          </ul>
-		</nav><!-- end main navigation -->
-        <!-- <div id="banner">
-        	<div id="logo"><a href="{{site.baseurl}}/index.html"><img src="{{site.baseurl}}/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
-        </div> -->
-
-    </header><!-- end header -->
+  <nav id="topnav" role="navigation">
+    <div class="menu-toggle">Menu</div>
+    <ul class="srt-menu" id="menu-main-navigation">
+      <li {% if current == 'home' %}class="current"{% endif %}><a href="{{site.baseurl}}/index.html">Home page</a></li>
+      <li {% if current == 'news' %}class="current"{% endif %}><a href="{{site.baseurl}}/news.html">News</a></li>
+      <li {% if current == 'sales' %}class="current"{% endif %}><a href="{{site.baseurl}}/sales.html">For Sale/Free</a></li>
+      <li {% if current == 'calendar' %}class="current"{% endif %}><a href="{{site.baseurl}}/calendar.html">Calendar</a></li>
+      <li {% if current == 'membership' %}class="current"{% endif %}><a href="{{site.baseurl}}/membership.html">Membership</a></li>
+      <li {% if current == 'photos' %}class="current"{% endif %}><a href="{{site.baseurl}}/photos.html">Photos</a></li>
+      <li {% if current == 'about' %}class="current"{% endif %}>
+        <a href="{{site.baseurl}}/aboutus.html">About Us</a>
+        <ul>
+          <li><a href="{{site.baseurl}}/aboutus.html#board">Board</a></li>
+          <li><a href="{{site.baseurl}}/aboutus.html#documents">Documents</a></li>
+          <li><a href="mailto:{{site.owner.email}}">Send us an email</a></li>
+          <li><a href="{{site.baseurl}}/issues.html">Report an issue</a></li>
+        </ul>
+      </li>
+      <li {% if current == 'links' %}class="current"{% endif %}><a href="{{site.baseurl}}/links.html">Useful links</a></li>
+      <li {% if current == 'sponsors' %}class="current"{% endif %}><a href="{{site.baseurl}}/sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+</header>

@@ -122,7 +122,7 @@ const NewsPagePreview = window.createClass({
               const rawImage = post.getIn(['data', 'image']);
               const imageStr = typeof rawImage === 'string' ? rawImage
                 : (rawImage && rawImage.get ? rawImage.get('url') : null);
-              const imgAsset = imageStr ? this.props.getAsset(imageStr).toString() : null;   
+              const imgAsset = imageStr ? this.props.getAsset(imageStr).toString() : null;
               const body     = post.getIn(['data', 'body']);
               const excerpt  = post.getIn(['data', 'excerpt']) || (body ? body.substring(0, 150) + '...' : '');
 
@@ -140,10 +140,10 @@ const NewsPagePreview = window.createClass({
       )
     );
   }
-});   
+});
 
 // ==========================================
 // 4. REGISTER BOTH WRAPPERS
 // ==========================================
 CMS.registerPreviewTemplate("news_page", NewsPagePreview);
-CMS.registerPreviewTemplate("posts", ArticlePostPreview);   
+CMS.registerPreviewTemplate("posts", ArticlePostPreview);

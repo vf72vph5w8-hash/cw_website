@@ -1,14 +1,8 @@
 ---
-layout: article
-title: "Halloween"
-categories: articles
-modified: 2021-11-08T15:30:41-04:00
-tags: general,holiday
-comments: false
-sponsors: "bottom"
-image:
-  feature: halloween.png
-  teaser: /images/halloween.png
+title: "HALLOWEEN Highlights from 2021"
+date: 2021-11-08 15:30
+featured: false
+image: /images/halloween.png
 ---
 
 

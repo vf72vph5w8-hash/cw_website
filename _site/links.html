@@ -64,47 +64,37 @@ function printImg(url) {
 
 <body id="home">
 
-<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
+
 
 
 
 
 <header class="wrapper clearfix">
+  <nav id="topnav" role="navigation">
+    <div class="menu-toggle">Menu</div>
+    <ul class="srt-menu" id="menu-main-navigation">
+      <li ><a href="/index.html">Home page</a></li>
+      <li ><a href="/news.html">News</a></li>
+      <li ><a href="/sales.html">For Sale/Free</a></li>
+      <li ><a href="/calendar.html">Calendar</a></li>
+      <li ><a href="/membership.html">Membership</a></li>
+      <li ><a href="/photos.html">Photos</a></li>
+      <li >
+        <a href="/aboutus.html">About Us</a>
+        <ul>
+          <li><a href="/aboutus.html#board">Board</a></li>
+          <li><a href="/aboutus.html#documents">Documents</a></li>
+          <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
+          <li><a href="/issues.html">Report an issue</a></li>
+        </ul>
+      </li>
+      <li class="current"><a href="/links.html">Useful links</a></li>
+      <li ><a href="/sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <!-- main navigation -->
-        <nav id="topnav" role="navigation">
-          <div class="menu-toggle">Menu</div>
-          <ul class="srt-menu" id="menu-main-navigation">
-              <li ><a href="/index.html">Home page</a></li>
-              <li ><a href="/news.html">News</a></li>
-              <li ><a href="/sales.html">For Sale/Free</a></li>
-              <li ><a href="/calendar.html">Calendar</a></li>
-              <li ><a href="/membership.html">Membership</a></li>
-              <li ><a href="/photos.html">Photos</a></li>
-              <li >
-                  <a href="/aboutus.html#board"">About Us</a>
-                  <ul>
-                      <li><a href="/aboutus.html#board">Board</a></li>
-                      <li><a href="/aboutus.html#documents">Documents</a></li>
-                      <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
-                      <li><a href="/issues.html">Report an issue</a></li>
-                  </ul>
-              </li>
-              <li  >
-                  <a href="/links.html">Useful links</a>
-              </li>
-              <li  >
-                  <a href="/sponsors.html">Sponsors</a>
-              </li>
-          </ul>
-		</nav><!-- end main navigation -->
-        <!-- <div id="banner">
-        	<div id="logo"><a href="/index.html"><img src="/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
-        </div> -->
-
-    </header><!-- end header -->
-
-
+<main>
 <section id="page-header" class="clearfix">
   <div class="wrapper">
     <h1>All the links we thought to put down</h1>
@@ -114,10 +104,8 @@ function printImg(url) {
 <div class="wrapper" id="main">
   <section id="content">
     <div class="row">
-
-      <!-- 1. OPTIONAL MAIN PAGE INTRO TEXT -->
       
-        <div class="intro-block" style="margin-bottom: 35px; line-height: 1.7; color: #4a5568;">
+        <div class="grid_12">
           <h1 id="cornwallis-neighborhood-assocation">Cornwallis Neighborhood Assocation</h1>
 
 <h2 id="email-us-at-cornwallisnagmailcom">Email us at <a href="mailto:cornwallisna@gmail.com">cornwallisna@gmail.com</a></h2>
@@ -126,375 +114,414 @@ function printImg(url) {
 
         </div>
       
+    </div>
 
-      <!-- 2. USEFUL LINKS DIRECTORY GRID -->
-      <div class="links-directory-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px; align-items: start;">
-        
+    <div class="row">
+
         <!-- Loop through categories inside _data/links.yml -->
         
-          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            
+          <div class="grid_12">
+
             <!-- Category Title Header -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            <h3>
               STATE OF FLORIDA
             </h3>
 
             <!-- Links Nested Roster Loop -->
-            <ul style="list-style: none; padding: 0; margin: 0;">
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.myflorida.gov" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        Official Web Site <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.myflorida.gov" target="_blank">
+                            Official Web Site
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.flhsmv.gov" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        Florida Highway Saftey and Motor Vehicles <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.flhsmv.gov" target="_blank">
+                            Florida Highway Saftey and Motor Vehicles
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-            </ul>
 
           </div>
         
-          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            
+          <div class="grid_12">
+
             <!-- Category Title Header -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            <h3>
               LEE COUNTY
             </h3>
 
             <!-- Links Nested Roster Loop -->
-            <ul style="list-style: none; padding: 0; margin: 0;">
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.leegov.com" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        Official Website <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.leegov.com" target="_blank">
+                            Official Website
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:2395332111" style="color: #718096; text-decoration: none;">
-                        (239) 533-2111
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:2395332111" style="color: #333; text-decoration: none;">
+                              (239) 533-2111
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.leeschools.net" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        Lee County Schools <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.leeschools.net" target="_blank">
+                            Lee County Schools
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:2393341102" style="color: #718096; text-decoration: none;">
-                        (239) 334-1102
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:2393341102" style="color: #333; text-decoration: none;">
+                              (239) 334-1102
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-            </ul>
 
           </div>
         
-          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            
+          <div class="grid_12">
+
             <!-- Category Title Header -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            <h3>
               CAPE CORAL
             </h3>
 
             <!-- Links Nested Roster Loop -->
-            <ul style="list-style: none; padding: 0; margin: 0;">
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="http://www.capecoral.net" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        Official Web Site <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="http://www.capecoral.net" target="_blank">
+                            Official Web Site
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:2395740401" style="color: #718096; text-decoration: none;">
-                        (239) 574-0401
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:2395740401" style="color: #333; text-decoration: none;">
+                              (239) 574-0401
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      Non-Emergency telephone
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          Non-Emergency telephone
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:311" style="color: #718096; text-decoration: none;">
-                        311
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:311" style="color: #333; text-decoration: none;">
+                              311
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-            </ul>
 
           </div>
         
-          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            
+          <div class="grid_12">
+
             <!-- Category Title Header -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            <h3>
               PUBLIC SAFETY
             </h3>
 
             <!-- Links Nested Roster Loop -->
-            <ul style="list-style: none; padding: 0; margin: 0;">
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.capecops.com" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        CCPD Web Site <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.capecops.com" target="_blank">
+                            CCPD Web Site
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:2395743223" style="color: #718096; text-decoration: none;">
-                        (239) 574-3223)
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:2395743223" style="color: #333; text-decoration: none;">
+                              (239) 574-3223)
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-            </ul>
 
           </div>
         
-          <div class="category-link-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-            
+          <div class="grid_12">
+
             <!-- Category Title Header -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.2rem; color: #2d3748; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            <h3>
               OTHER
             </h3>
 
             <!-- Links Nested Roster Loop -->
-            <ul style="list-style: none; padding: 0; margin: 0;">
               
-                <li style="padding: 10px 0; border-bottom: 1px solid #f7fafc; display: flex; flex-direction: column; gap: 4px;">
-                  
-                  <!-- Link Action Text -->
-                  <div style="font-weight: 600; font-size: 1.05rem; color: #2d3748;">
-                    
-                      <a href="https://www.leegov.com/library/branches/cc" target="_blank" style="color: #3182ce; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-                        CAPE CORAL LIBRARY <span style="font-size: 0.85rem; font-weight: normal;">↗️</span>
-                      </a>
-                    
-                  </div>
+                <ul>
+                    <li>
+                        
+                          <a href="https://www.leegov.com/library/branches/cc" target="_blank">
+                            CAPE CORAL LIBRARY
+                          </a>
+                        
 
-                  <!-- Direct Mobile Dial Phone Support Line -->
-                  
-                    <div style="font-size: 0.9rem; color: #718096; display: flex; align-items: center; gap: 4px;">
-                      📞 <a href="tel:2395334500" style="color: #718096; text-decoration: none;">
-                        (239) 533-4500
-                      </a>
-                    </div>
-                  
+                        
+                          <span>
+                            <a href="tel:2395334500" style="color: #333; text-decoration: none;">
+                              (239) 533-4500
+                            </a>
+                          </span>
+                        
 
-                </li>
+                    </li>
+                </ul>
+
               
-            </ul>
 
           </div>
         
       </div>
 
-      
 
-    </div>
-    <div class="row" style="padding:25px 25px;">
-        <div class="grid_6">
-        </div>
-        <div class="grid_6">
-          
-<!-- responsive FlexSlider image slideshow sponsors=bottom-->
+      <div class="row" style="padding:25px 25px;">
+          <div class="grid_6">
+          </div>
+          <div class="grid_6">
+            <!-- responsive FlexSlider image slideshow -->
+
+
+
 <div class="flexslider">
   <ul class="slides">
-    <!-- DATA {"img" => "/images/ads/RoyalShell2.png", "caption" => "Royal Shell Real Estate", "phone" => "239-839-8466", "email" => "Realtor.Sandra.Wall@gmail.com", "link" => "https://SandraWall.RoyalShellrealestate.com", "name" => "Royal Shell"}{"img" => "/images/ads/SandraWall2.png", "caption" => "Insurance Options Inc.", "phone" => "239-839-8466", "email" => "medi.sandra.wall@gmail.com", "link" => "https://Insuranceoptionsfl.com", "name" => "Specializing in Medicare Products"}{"img" => "/images/ads/QualityPest.jpg", "caption" => "Donald Burns, Quality Pest Control", "phone" => "239-540-2359", "email" => "qualitypestswfl@gmail.com", "link" => "https://www.qualitypestcontrolswfl.com", "name" => "Quality Pest Control"}{"img" => "/images/ads/FremarConstruction.png", "caption" => "Mark M. Steinberg, Fremar Construction", "phone" => "239-549-8681", "link" => "https://www.fremarhomes.com,https://www.capecoralbuilder.net", "email" => "markms@capecoralbuilder.net", "name" => "Fremar Construction"}{"img" => "/images/ads/Ann_Vaughn2.png", "caption" => "Ann Vaughn REALTOR", "phone" => "239-671-9271", "email" => "annvaughnrealtor@gmail.com", "link" => "https://annvaughn.swfloridaareahomesearch.com", "name" => "Ann Vaughn @ Century 21"}{"img" => "/images/ads/CafeYOU.png", "caption" => "Cafe YOU", "phone" => "239-233-6912", "link" => "https://www.cafeyou.com", "name" => "Cafe YOU"}{"img" => "/images/ads/your_ad_here.jpg", "caption" => "Contact us to list your company, $80/yr", "name" => "CNA", "email" => "cornwallisna+ads@gmail.com", "link" => "https://cornwallisna.org/aboutus"} -->
     
-        
-        <li>
-        
-          <a href="https://SandraWall.RoyalShellrealestate.com"><img src="/images/ads/RoyalShell2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell Real Estate</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
+      
 
-    
-        
+      
         <li>
-        
-          <a href="https://Insuranceoptionsfl.com"><img src="/images/ads/SandraWall2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.qualitypestcontrolswfl.com"><img src="/images/ads/QualityPest.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.qualitypestcontrolswfl.com">Donald Burns, Quality Pest Control</a>
-          <br><a href="tel:239-540-2359">239-540-2359</a>
-          <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.fremarhomes.com"><img src="/images/ads/FremarConstruction.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.fremarhomes.com">Mark M. Steinberg, Fremar Construction</a>
-          <br><a href="tel:239-549-8681">239-549-8681</a>
-          <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://annvaughn.swfloridaareahomesearch.com"><img src="/images/ads/Ann_Vaughn2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://annvaughn.swfloridaareahomesearch.com">Ann Vaughn REALTOR</a>
-          <br><a href="tel:239-671-9271">239-671-9271</a>
-          <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.cafeyou.com"><img src="/images/ads/CafeYOU.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.cafeyou.com">Cafe YOU</a>
-          <br><a href="tel:239-233-6912">239-233-6912</a>
           
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://cornwallisna.org/aboutus"><img src="/images/ads/your_ad_here.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://cornwallisna.org/aboutus">Contact us to list your company, $80/yr</a>
+            <a href="https://SandraWall.RoyalShellrealestate.com" target="_blank" rel="noopener">
           
-          <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
-          <br>
-        </p>
+
+          
+            <img src="/assets/uploads/sponsors/royalshell2.png" alt="Royal Shell">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
         </li>
-
+      
     
-    </ul>
-  </div><!-- FlexSlider -->
+      
 
+      
+        <li>
+          
+            <a href="https://Insuranceoptionsfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/sandrawall2.png" alt="Specializing in Medicare Products">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.qualitypestcontrolswfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/qualitypest.jpg" alt="Quality Pest Control">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.qualitypestcontrolswfl.com">Quality Pest Control</a>
+            <br><a href="tel:239-540-2359">239-540-2359</a>
+            <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.fremarhomes.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/fremarconstruction.png" alt="Fremar Construction">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.fremarhomes.com/">Fremar Construction</a>
+            <br><a href="tel:239-549-8681">239-549-8681</a>
+            <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://annvaughn.swfloridaareahomesearch.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/ann_vaughn2.png" alt="Ann Vaughn @ Century 21">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://annvaughn.swfloridaareahomesearch.com/">Ann Vaughn REALTOR</a>
+            <br><a href="tel:239-671-9271">239-671-9271</a>
+            <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.cafeyou.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/cafeyou.png" alt="Cafe You">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.cafeyou.com">Café YOU</a>
+            <br><a href="tel:239-233-6912">239-233-6912</a>
+            
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+
+          
+            <img src="/assets/uploads/sponsors/your_ad_here.jpg" alt="CNA">
+          
+
+          
+          <p class="flex-caption">
+            <a href="">Cornwallis Neighborhood Association</a>
+            
+            <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+  </ul>
+</div><!-- FlexSlider -->
+
+          </div>
         </div>
-      </div>
+    </div>
+
+
   </section>
-
-  <!-- Sidebar Component Menu Selection Links -->
-  
 </div>
-
+</main>
 <!-- footer area -->
 <footer>
 	<div id="colophon" class="wrapper clearfix">
     <!-- PAGEHITID: page__links.html -->
     <!-- <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fcornwallisna%2Fcw_website%2Fhit-counter-page__links.html" alt="Stats" style="display: none;"></a> -->&nbsp; Page created by <a href="mailto:fcassirer@gmail.com">Fred Cassirer</a>,
       <a href="/issues.html">click here to open a new problem report</a>.  To list existing reports, <a href="https://github.com/cornwallisna/cw_website//issues">click here</a>
-      <p>&nbsp; Site last updated at: October 23, 2026 23:33 EDT</p>
+      <p>&nbsp; Site last updated at: October 26, 2026 13:12 EDT</p>
 
     </div>
 

@@ -6,7 +6,6 @@ const PhotosPagePreview = window.createClass({
   componentDidMount: function() {
     const { getCollection } = this.props;
     if (typeof getCollection === 'function') {
-      // Fetches individual saved album front-matters asynchronously
       getCollection('photos')
         .then(entries => {
           if (entries && entries.length > 0) {
@@ -20,67 +19,94 @@ const PhotosPagePreview = window.createClass({
   render: function() {
     const entry = this.props.entry;
     const title = entry.getIn(['data', 'title']) || 'Photo Albums';
-    const featuredTarget = entry.getIn(['data', 'featured_album']);
+    const h = window.h;
 
-    // Attempt to match the current chosen string value against loaded records
-    let matchedFeatured = null;
-    if (featuredTarget && this.state.loadedAlbums.length > 0) {
-      matchedFeatured = this.state.loadedAlbums.find(album => {
-        return album.getIn(['data', 'title']) === featuredTarget;
-      });
+    // Featured image
+    const rawImage = entry.getIn(['data', 'image', 'feature']);
+    const imgWidth = entry.getIn(['data', 'image', 'feature_width']);
+    let purl = null;
+    if (rawImage) {
+      const resolved = this.props.getAsset(rawImage).toString();
+      purl = resolved.startsWith('https://') ? resolved : `/images/${resolved}`;
     }
 
-    return window.h('div', { 
-      className: 'photos-page-preview', 
-      style: { padding: '20px', fontFamily: 'sans-serif', backgroundColor: '#ffffff', minHeight: '100vh' } 
-    },
-      window.h('div', { style: { maxWidth: '1200px', margin: '0 auto' } },
-        
-        // Main Admin Bar Header Banner
-        window.h('h1', { style: { fontSize: '2.4rem', color: '#1a202c', marginBottom: '15px' } }, title),
-        
-        // Native Parsed Markdown Summary Box
-        window.h('div', { style: { color: '#4a5568', lineHeight: '1.6', marginBottom: '30px' } }, 
-          this.props.widgetFor('intro_text')
-        ),
+    return h('div', {},
+      // --- Page Header ---
+      h('section', { id: 'page-header', className: 'clearfix' },
+        h('div', { className: 'wrapper' },
+          h('h1', {}, title)
+        )
+      ),
 
-        // Live Mock Render of the Active Featured Card Component
-        matchedFeatured ? window.h('div', { 
-          style: { background: '#edf2f7', padding: '30px', borderRadius: '8px', marginBottom: '40px', borderLeft: '6px solid #3182ce' } 
-        },
-          window.h('span', { style: { color: '#3182ce', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase' } }, '⭐ Highlighted Gallery'),
-          window.h('h2', { style: { margin: '5px 0 10px 0', fontSize: '1.8rem', color: '#1a202c' } }, matchedFeatured.getIn(['data', 'title'])),
-          window.h('a', { 
-            href: matchedFeatured.getIn(['data', 'external_url']), 
-            target: '_blank',
-            style: { color: '#3182ce', fontWeight: '600', textDecoration: 'none' } 
-          }, 'Open Featured Google Album →')
-        ) : (featuredTarget ? window.h('p', { style: { color: '#a0aec0', fontStyle: 'italic' } }, `Resolving relationship hook for: "${featuredTarget}"...`) : null),
+      // --- Main ---
+      h('div', { className: 'wrapper', id: 'main' },
+        // Featured image
+        purl ? h('img', { src: purl, width: imgWidth || undefined }) : null,
 
-        window.h('hr', { style: { border: '0', height: '1px', background: '#e2e8f0', margin: '30px 0' } }),
-        window.h('h2', { style: { fontSize: '1.5rem', color: '#2d3748', marginBottom: '20px' } }, 'All Shared Albums List Grid View'),
+        h('section', { id: 'content' },
+          // Intro
+          entry.getIn(['data', 'intro_text'])
+            ? h('div', { className: 'row' },
+                h('div', { className: 'grid_12' },
+                  this.props.widgetFor('intro_text')
+                )
+              )
+            : null,
 
-        // Grid Loop Layout Array Preview
-        window.h('div', { 
-          style: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' } 
-        },
-          this.state.loadedAlbums.length > 0 
-            ? this.state.loadedAlbums.map((album, idx) => {
-                const aTitle = album.getIn(['data', 'title']) || 'Untitled';
-                const aUrl = album.getIn(['data', 'external_url']) || '#';
-                return window.h('div', { 
-                  key: idx, 
-                  style: { border: '1px solid #e2e8f0', padding: '15px', borderRadius: '6px', background: '#fff' } 
-                },
-                  window.h('h4', { style: { margin: '0 0 10px 0', color: '#2d3748' } }, aTitle),
-                  window.h('span', { style: { fontSize: '0.85rem', color: '#718096' } }, 'Google Photos Gallery')
-                );
-              })
-            : window.h('p', { style: { color: '#718096', fontStyle: 'italic' } }, 'Populating collections checklist...')
+          // PublicAlbum carousel (static, matches layout)
+          h('div', { className: 'row' },
+            h('div', { className: 'grid_12' },
+              h('script', { src: 'https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js', async: true }),
+              h('div', {
+                className: 'pa-carousel-widget',
+                style: { width: '100%', height: '480px', display: 'none' },
+                'data-link': 'https://photos.google.com/share/AF1QipPfub4iIqDfra5tBsIYZKvKJjIR4VYAHLW_yYHHXJqE_remlPhgtZ0wise3VxI6Jw?key=UFdCcWdRU1laMXN5ajU4d28wbUMwNEtRRFhmQnJn',
+                'data-title': 'Cornwallis Views · Jul 3, 2019 – Jan 9, 2021 📸',
+                'data-description': 'Shared album · Tap to view!'
+              },
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczMe5us3xyl0QplJullS05odm9o82oITv9nreXenkyxaCwt73dbJnu1nqxya3HjHOrF1iiJf7pHjjiq3a48Y0-oyf-FmlvLBXAC850PuMQyJQqhXTkU=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczPVEQ5xvkEZel4-_CBgYYRsWgb_7B8qZpInunaw6cDyGm-48Yw6TwdsYza02ysOqRZoWeLJ-mhEaQDbaibyPckyapWE8vQjIUbVtvDFowu9NyMeprM=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczN7HXTK9vKr2elWpx4JxyRA6rEcxrKVxZ51hy_v4zCLukemHG9tkdfvDth9LWnnxdGKOk32vx5-YyolWJQwsKa8Hv9BAhGNlcXSwcONufZb3Fsaa34=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczN7XEJh4c8uQ6NzTHuZvnlpw5WS16cRf2HaqC7gFYkU3T_7vrBAJvDTcfj_R-x3RCtSYmK1gRSEVOFYTSaeex8D4VsqDI8uz-o160h1l7lM84_X14o=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczM8Fb6QVdjtBfH022QqTiaOla8gopZVty9EZraapsqYS5Cc-0L6KCIKi5zqwL1uQFOdvGll99quHZkPb-YXFaakj-lV2lvgQB6wOFmxuP5KA4LAamk=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczMYsytj-ApyAYhAqgRc_MN5RdpQXhoXuSw8Y7GNkpTESuAk45KvHHkn9OZs4vqywJEqJUwQT6RK87f9eC8m2rMPaK7kfdgLeiLFC3pTjAx-QrYr36o=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczMPVfTPD7rcJ1o6L_eSdrJG1I-yy55tVlhjTdKRBmwJaoEq10UZ1T0HrEWBd5fVBIyv--XOTz1cDzoGMTAyBI03UpvEUkk-l088lW-gCNTLFTVOaj8=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczOi_ASoshALLT1bnbSTS88XwvPAhfb8V-zUykpf2AFZ1scVnU20LWCNItrT1VL-oBpT0kPbhCkPpKEevO1kJsX8FzcTMx3foO3llFINh1bBmrTWtJs=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczPZJih35QJNKb0p6qMp8IqmnJEj3twKTcSDhjEn44_gKsLKE9--qEH83hPiJs2dGObeDYtkEkmmrqAsMlCNht2fSWpubgkZwsAH9AuMiHiiqx-dloQ=w1920-h1080' }),
+                h('object', { data: 'https://lh3.googleusercontent.com/pw/AP1GczOBxue8F43F0LlYevPdtEGNzA6IETeIlkvEs-raYiBfSpK5wuB8QEj-uDqYC2iVOn0mgF4kxf3nlOtdpNR7x7A1BAk8C6E0O0v6UTYQj8P54hWF9RU=w1920-h1080' })
+              )
+            )
+          ),
+
+          // Albums list
+          this.state.loadedAlbums.length > 0
+            ? h('div', { className: 'row' },
+                h('div', { className: 'grid_12' },
+                  h('h2', {}, 'Links to Cornwallis Neighborhood Shared Albums'),
+                  h('ul', {},
+                    this.state.loadedAlbums.map((album, idx) =>
+                      h('li', { key: idx },
+                        h('a', { href: album.getIn(['data', 'external_url']) || '#' },
+                          album.getIn(['data', 'title']) || 'Untitled'
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            : null,
+
+          // Sponsors
+          h('div', { className: 'row' },
+            h('div', { className: 'grid_6' }),
+            h('div', { className: 'grid_6' },
+              h('div', { style: { color: '#a0aec0', fontStyle: 'italic' } }, 'Sponsors')
+            )
+          )
         )
       )
     );
   }
 });
 
-CMS.registerPreviewTemplate("photos_page", PhotosPagePreview);
+CMS.registerPreviewTemplate('photos_page', PhotosPagePreview);

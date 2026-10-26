@@ -13,6 +13,8 @@ you can see the complete page [here](https://cornwallisna.org/README/index.html)
 
 This website uses Jekyll and the Responsive Starter Template to provide a website for the Cornwallis Neighborhood Community.  The goal of the website is to provide a live newsletter such that information can be shared more quickly and at less cost than our quarterly newsletter.
 
+Content is managed through [Decap CMS](https://decapcms.org) (formerly Netlify CMS), which provides a web-based admin interface at `/admin/` for authorized board members.
+
 # Features
 
 * Simple home page for important news
@@ -21,54 +23,39 @@ This website uses Jekyll and the Responsive Starter Template to provide a websit
 * Membership signup and renewal instructions
 * For sale/curb alert items to post
 * Association by-laws and document archive
-* Support for our communitY sponsors
+* Support for sponsors
 * Website feedback and issue tickets
 * [Statistics page]({{site.baseurl}}/stats.html)
 
 # How it works
 
-Authorized members of the CNA team can submit updates to this Github repository and upon approval the website is recreated and published.  The overall structure of the website is anticipated to be somewhat static with various pre-defined pages being updated by the CNA.  The following pages can be edited as follows:
+Authorized members of the CNA team log in to the [Decap CMS admin]({{site.baseurl}}/admin/) using their own Github account via OAuth. Once logged in, they will be able to edit content using the Decap CMS admin pages.  Changes are submitted as pull requests to this GitHub repository as soon as they're submitted. All of files and configuration related to Decap CMS can be found in the `/admin/` directory. The site can continue working completely independently of Decap CMS. Some of the fields added into Decap CMS are not being used at this time. They can be added to the templates in the future if desired, but they were left out for the current template versions of the site. Filling them in will not cause any harm, but they will not be displayed if not included in the templates.
 
-* [home page]({{site.github_url}}/blob/main/index.md) - Front page [edit]({{site.github_url}}/edit/main/index.md)
-* [news page]({{site.github_url}}/blob/main/news.md) - News page [edit]({{site.github_url}}/edit/main/news.md)
-* [for sale page]({{site.github_url}}/blob/main/sales.md) - News page [edit]({{site.github_url}}/edit/main/sales.md)
-* [presidents page]({{site.github_url}}/blob/main/presidents.md) - Presidents Message page [edit]({{site.github_url}}/edit/main/presidents.md)
-* [vicepresidents page]({{site.github_url}}/blob/main/vicepresidents.md) - Vice Presidents Message  page [edit]({{site.github_url}}/edit/main/vicepresidents.md)
-* [aboutus page]({{site.github_url}}/blob/main/aboutus.md) - About page [edit]({{site.github_url}}/edit/main/aboutus.md)
-* [membership page]({{site.github_url}}/blob/main/membership.md) - Membership/Enrollment page [edit]({{site.github_url}}/edit/main/membership.md)
+## Editing pages
+
+Most pages are edited directly through the CMS admin interface.
 
 ## Jekyll and frontmatter
 
-[Jekyll](https://jekyll.com) is a framework used by Github to easily define and manage web pages.  This site is a combination of Jekyll and the [Simple Responsive Template](http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html) which provides the web site layout.
+[Jekyll](https://jekyll.com) is the static site generator. This site is a combination of Jekyll and the [Simple Responsive Template](http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html) which provides the web site layout.
 
-Frontmatter is a [Jekyll](https://jekyllrb.com/docs/front-matter/) term that refers to some configuration information that can be added to the top of a Jekyll page.
+Frontmatter is a [Jekyll](https://jekyllrb.com/docs/front-matter/) term that refers to configuration information at the top of a Jekyll page. In most cases, the CMS handles frontmatter automatically — you set fields in the admin form and the CMS writes the YAML for you.
 
 ### Supported frontmatter for this site
 
-|name | description | layout type |
-|:----------|-------------|-------------|
-|layout | The type of template page, i.e, home, content_page, article | all |
-|topnav| the name(s) of the menu items to highlight when on this page| all |
-|banner| Something interesting to say at the top of a page| all |
-|image: feature: | name of a png, jpg etc image file to be used above any text.| all |
-|image: teaser: | name of a png, jpg etc image file to be used on the blog listing page| article |
-|sponsors| Position or disable advertisement banners.  "off" will disable on the page, other options are "top" or "bottom"| all |
-|title| Title of the page or article | all |
-|modified| Date and Time of the form YYYY-MM-DD<b>T</b>HH:MM:SS<b>-04:00</b>.  Note the text in <b>bold</b> is required as is.  Example, 2021-01-26T11:30:41-04:00 is Jan 26, 2021 at 11:30:41am EDT (-04:00 timezone) |
-|tags| Keywords for future search| all |
+Frontmatter will vary from page-to-page and collection-to-collection. Decap CMS will generate the required frontmatter for all pages within the CMS.
 
 ### Images
 
-Images are jpg, png, or any other supported picture type.  Typically, they are stored in the images/ folder.  The 'image:' frontmatter tag assumes any image name unless otherwise specified is found in the images/ folder.   For example, <b>garage-sale.png</b> would be [{{site.github_url}}images]({{site.github_url}}/tree/main/images).  Images can also be links to pictures on the web by providing the URL instead of the image/ link.
+Images are typically stored in the `images/` folder. The CMS handles image uploads — select an image in the admin and it will be added to the repository automatically.
 
-Images can be added to the repository via [drag and drop]({{site.github_url}}/upload/main/images) or by clicking on the Add Files button
+Images can also be external URLs (e.g., Google Photos links). The `image.feature` field accepts either a filename (resolved to `/images/filename`) or a full `https://` URL.
 
 ## Adding a new news or for-sale entry
 
-New entries are created in the [_posts folder]({{site.github_url}}/blob/main/_posts) folder.  These files are named as
-*YYYY-MM-DD-anythingyouwant.md*.  For example, 2021-02-02-groundhogsday-update.md where you could tell everyone where to see the groundhogs.
+New entries are created through the CMS admin under the appropriate collection. Each entry is a Jekyll article stored in `_posts/` with a filename like `YYYY-MM-DD-slug.md`.
 
-Each entry is a Jekyll article page.  An example article might look like:
+An example article frontmatter:
 
 <pre>
 ---
@@ -87,40 +74,31 @@ image:
 ## This is a header
 
 This is content, we are having a garage sale ...
-
 </pre>
 
-You can [create a new blog entry]({{site.github_url}}/new/main/_posts) directly.  Simply cut and paste the above frontmatter into the new file and add your text below the `---`.  Be sure to change the image to suit your blog entry (See above for how to upload a new image).
-
-The categories entry above has two possible values, *articles* for news and *sales* for free/for-sale items.  You can also specify a contact and that will be added to the bottom of the message.  Valid forms for the contact info are the same as for sponsors (see {{site.github_url}}/_data/sponsors.yml) *link* field (see below.)
+The `categories` field has two values: *articles* for news and *sales* for free/for-sale items. The `contact` field adds a contact link to the bottom of the message.
 
 ## Advertising
 
-There is a fairly simple advertising capability that will put a scrolling picture slider at the top, side, or bottom of a page.  The contents of the advertising window is controlled by a list of advertiser pictures and captions.
+The rotating sponsor banner is managed through the **Sponsors** collection in the CMS admin. Each entry has:
 
-This file can be found in the _data/sponsors.yml file.  To add or remove advertisers simply edit [this file]({{site.github_url}}/blob/main/_data/sponsors.yml).
-The file is made of of a list of 4 values:
+* **img** – Path to the advertiser image (usually in `images/ads/`)
+* **caption** – Text caption (supports HTML links)
+* **link** – URL, `mailto:`, or `tel:` link for the click-through
+* **name** – Internal identifier
 
-* img: is the name of the image, usually found in images/ads/
-* caption: Text caption about the sponsor, maybe a phone number of website link etc.
-* link: Some kind of link that clicking the picture will take you to.  It could be a sponsors website, a mailto: or tel: type link if they do not have a website.
-* name: The name of the advertisor
+The order of entries in the collection determines display order.
 
-For example:
+## Board members & documents
 
-<pre>
-slides:
-  - img: /images/ads/DesignsToAT.png
-    caption: Designs To A "T", <a href="tel:239-549-5995">239-549-5995</a>
-    link: mailto:designs2aT@comcast.net
-    name: DesignsToAT
-</pre>
+The About page pulls from two CMS collections:
 
-The order that these entries are listed is the order they are displayed on the website.
+* **Board** – One entry per member (position, first/last name, address, phone, email, photo). The `aboutus` page's `board_members` field controls display order.
+* **Site Documents** – A single entry (`slug: drive_links`) containing a list of Google Drive folder links shown in the Documents section.
 
 # Email forwarding
 
-Emails to council members are forwarded to their respective accounts when email is received by cornwallisna@gmail.com.   The currently supported redirects are:
+Emails to council members are forwarded to their respective accounts when email is received by cornwallisna@gmail.com. The currently supported redirects are:
 
 * cornwallisna+president@gmail.com
 * cornwallisna+vicepresident@gmail.com
@@ -129,23 +107,23 @@ Emails to council members are forwarded to their respective accounts when email 
 
 Additional email tags used within the site include:
 
-* cornwallisna+news@gmail.com  - Send CNA news or life event information to be published
-* cornwallisna+4sale@gmail.com - Send CNA requests to post local sale items and curb alerts (free stuff)
+* cornwallisna+news@gmail.com – Send CNA news or life event information to be published
+* cornwallisna+4sale@gmail.com – Send CNA requests to post local sale items and curb alerts (free stuff)
 
 # Analytics
 
-The site is being monitored by Google Analytics.  You will need the association account credentials to access the [GA site](analytics.google.com).
+The site is monitored by Google Analytics. You will need the association account credentials to access the [GA site](https://analytics.google.com).
 
 # Original README from Simple Responsive Starter Template
 
-Simple is a responsive starter web site template. It is intended to be basic and bare-bone, with minimum styling and options included. Still, it has features clients usually would ask for: menu with drop-downs, slider, grid layout. See full list of features below.
+Simple is a responsive starter web site template. It is intended to be basic and bare-bone, with minimum styling and options included. Still, it has features clients usually would ask for: menu with drop-downs, slider, grid layout.
 
-Simple is mainly for web designers (beginner to intermediate level). But it is so simple (pun intended:) ), that any person with very little knowledge of HTML can modify and use it.
+Simple is mainly for web designers (beginner to intermediate level). But it is so simple (pun intended:) that any person with very little knowledge of HTML can modify and use it.
 
-To build a website with Simple, download it and add your own content and pages. Or, if you want a different design, you can tweak the CSS. In either case, you will have a device-agnostic website that works and looks great on smart phones, tablets, laptops, and desktops. This tutorial will get you started and help you build a fully-functional site.
+To build a website with Simple, download it and add your own content and pages. Or, if you want a different design, you can tweak the CSS. In either case, you will have a device-agnostic website that works and looks great on smart phones, tablets, laptops, and desktops.
 
-Simple is compatible with FireFox, Google Chrome, Opera, Opera Mini, Safari, IE9, 10. It is also compatible with IE8, but they will see the mobile layout. IE 6 and IE7 Must Die!
+Simple is compatible with FireFox, Google Chrome, Opera, Opera Mini, Safari, IE9, 10. It is also compatible with IE8, but they will see the mobile layout.
 
-Simple is a FREE software, released without any warranty under Common Public Attribution License. Simple can be used in personal or commercial projects for free provided you keep the attribution statement intact. Read more about terms of use here http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html
+Simple is a FREE software, released without any warranty under Common Public Attribution License. Simple can be used in personal or commercial projects for free provided you keep the attribution statement intact. Read more about terms of use [here](http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html).
 
 If you want to use Simple without attribution link, buy us a coffee and get a waiver: http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html

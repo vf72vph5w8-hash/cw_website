@@ -1,26 +1,35 @@
+<!-- responsive FlexSlider image slideshow -->
+{% assign sponsors_page = site.pages | where: "permalink", "/sponsors.html" | first %}
 
-<!-- responsive FlexSlider image slideshow sponsors={{ page.sponsors }}-->
+
 <div class="flexslider">
   <ul class="slides">
-    <!-- DATA {{ site.data.sponsors.slides }} -->
-    {% for slide in site.data.sponsors.slides %}
-        {% if slide.link %}
-          {% assign link=slide.link|split: ","|first %}
-        {%endif%}
-        <li>
-        {% if slide.img contains "https://" or slide.img contains "http://" %}
-          <a href="{{link}}"><img src="{{ slide.img }}"/></a>
-        {% else %}
-          <a href="{{link}}"><img src="{{site.baseurl}}{{ slide.img }}"/></a>
-        {% endif %}
-        <p class="flex-caption">
-          <a href="{{link}}">{{ slide.caption }}</a>
-          {% if slide.phone %}<br><a href="tel:{{ slide.phone }}">{{slide.phone}}</a>{%endif%}
-          {% if slide.email %}<br><a href="mailto:{{ slide.email }}">Email Us!</a>{%endif%}
-          <br>
-        </p>
-        </li>
+    {% for sponsor_name in sponsors_page.sponsors_list %}
+      {% assign sponsor = site.sponsors | where: "business", sponsor_name | first %}
 
+      {% if sponsor and sponsor.logo %}
+        <li>
+          {% if sponsor.website %}
+            <a href="{{ sponsor.website }}" target="_blank" rel="noopener">
+          {% endif %}
+
+          {% if sponsor.logo contains "https://" or sponsor.logo contains "http://" %}
+            <img src="{{ sponsor.logo }}" alt="{{ sponsor.title | default: sponsor.business }}">
+          {% else %}
+            <img src="{{ site.baseurl }}{{ sponsor.logo }}" alt="{{ sponsor.title | default: sponsor.business }}">
+          {% endif %}
+
+          {% if sponsor.website %}
+            </a>
+          {% endif %}
+          <p class="flex-caption">
+            <a href="{{sponsor.website}}">{{ sponsor.business }}</a>
+            {% if sponsor.phone %}<br><a href="tel:{{ sponsor.phone }}">{{sponsor.phone}}</a>{%endif%}
+            {% if sponsor.email %}<br><a href="mailto:{{ sponsor.email }}">Email Us!</a>{%endif%}
+            <br>
+          </p>
+        </li>
+      {% endif %}
     {% endfor %}
-    </ul>
-  </div><!-- FlexSlider -->
+  </ul>
+</div><!-- FlexSlider -->

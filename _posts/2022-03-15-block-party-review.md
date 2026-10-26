@@ -1,12 +1,8 @@
 ---
-layout: article
 title: "Block Party 2022 Review"
-categories: articles
-modified: 2022-03-15T11:50:41-04:00
-tags: general,holiday
-comments: false
-sponsors: "bottom"
-image:
+date: 2022-03-15T11:50:41-04:00
+featured: false
+image: 
   feature: Block-Party-Logo.jpg
   teaser: Block-Party-Logo.jpg
 ---

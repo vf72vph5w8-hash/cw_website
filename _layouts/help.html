@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% include head.html %}
+<body id="home">
+
+<!-- header area -->
+{% include header.html %}
+<!-- end header -->
+
+
+<section id="page-header" class="clearfix">
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+	<h1>{{ page.banner }}</h1>
+    </div>
+
+</section>
+
+
+<!-- main content area -->
+  <div class="wrapper" id="main">
+    <section id="content" >
+      <div class="row">
+        {{ content }}
+      </div>
+    </section><!-- #end content area -->
+
+  </div><!-- #end div #main .wrapper -->
+
+{% include footer.html %}
+
+</body>
+</html>

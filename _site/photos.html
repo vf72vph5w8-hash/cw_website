@@ -1,4 +1,3 @@
-<!-- CURRENT LAYOUT: CONTENT_PAGE -->
 <!DOCTYPE html>
 
 <!-- This is the top of every html page, not the menu header -->
@@ -68,55 +67,43 @@ function printImg(url) {
 <body id="home">
 
 <!-- header area -->
-<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
+
 
 
 
 
 <header class="wrapper clearfix">
-
-        <!-- main navigation -->
-        <nav id="topnav" role="navigation">
-          <div class="menu-toggle">Menu</div>
-          <ul class="srt-menu" id="menu-main-navigation">
-              <li ><a href="/index.html">Home page</a></li>
-              <li ><a href="/news.html">News</a></li>
-              <li ><a href="/sales.html">For Sale/Free</a></li>
-              <li ><a href="/calendar.html">Calendar</a></li>
-              <li ><a href="/membership.html">Membership</a></li>
-              <li ><a href="/photos.html">Photos</a></li>
-              <li >
-                  <a href="/aboutus.html#board"">About Us</a>
-                  <ul>
-                      <li><a href="/aboutus.html#board">Board</a></li>
-                      <li><a href="/aboutus.html#documents">Documents</a></li>
-                      <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
-                      <li><a href="/issues.html">Report an issue</a></li>
-                  </ul>
-              </li>
-              <li  >
-                  <a href="/links.html">Useful links</a>
-              </li>
-              <li  >
-                  <a href="/sponsors.html">Sponsors</a>
-              </li>
-          </ul>
-		</nav><!-- end main navigation -->
-        <!-- <div id="banner">
-        	<div id="logo"><a href="/index.html"><img src="/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
-        </div> -->
-
-    </header><!-- end header -->
+  <nav id="topnav" role="navigation">
+    <div class="menu-toggle">Menu</div>
+    <ul class="srt-menu" id="menu-main-navigation">
+      <li ><a href="/index.html">Home page</a></li>
+      <li ><a href="/news.html">News</a></li>
+      <li ><a href="/sales.html">For Sale/Free</a></li>
+      <li ><a href="/calendar.html">Calendar</a></li>
+      <li ><a href="/membership.html">Membership</a></li>
+      <li class="current"><a href="/photos.html">Photos</a></li>
+      <li >
+        <a href="/aboutus.html">About Us</a>
+        <ul>
+          <li><a href="/aboutus.html#board">Board</a></li>
+          <li><a href="/aboutus.html#documents">Documents</a></li>
+          <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
+          <li><a href="/issues.html">Report an issue</a></li>
+        </ul>
+      </li>
+      <li ><a href="/links.html">Useful links</a></li>
+      <li ><a href="/sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+</header>
 
 <!-- end header -->
 
 
 <section id="page-header" class="clearfix">
-<!-- responsive FlexSlider image slideshow -->
-<div class="wrapper">
-	<h1>Photo Albums</h1>
+    <div class="wrapper">
+        <h1>Photo Albums</h1>
     </div>
-
 </section>
 
 
@@ -125,227 +112,236 @@ function printImg(url) {
     
 <!-- content area -->
     <section id="content" >
-      <!-- sponsors: bottom -->
       
       <div class="row">
+          <div class="grid_12"><h1 id="links-to-google-photo-photo-albums">Links to google photo photo albums</h1>
 
-
-
-        
-        
-          <div class="featured-album-container" style="background: #edf2f7; padding: 35px; border-radius: 8px; margin-bottom: 40px; border-left: 6px solid #3182ce; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <span style="color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em;">⭐ Highlighted Gallery</span>
-            <h2 style="margin: 8px 0 12px 0; font-size: 1.8rem; color: #1a202c;">Cornwallis Views</h2>
-            <p style="color: #4a5568; margin-bottom: 15px;">Check out the latest featured shots contributed by your neighbors.</p>
-            <a href="https://photos.google.com/share/AF1QipPfub4iIqDfra5tBsIYZKvKJjIR4VYAHLW_yYHHXJqE_remlPhgtZ0wise3VxI6Jw?key=UFdCcWdRU1laMXN5ajU4d28wbUMwNEtRRFhmQnJn" target="_blank" class="btn" style="display: inline-block; padding: 10px 20px; background: #3182ce; color: white; text-decoration: none; border-radius: 4px; font-weight: 600;">
-              Open Featured Google Album →
-            </a>
-          </div>
-        
+<p>This is a shared photo album of some of the picutres we have collected. If you would like to share some of your pictures just send them to us at <a href="mailto:cornwallisna+photos@gmail.com">cornwallisna+photos@gmail.com</a></p>
+</div>
+      </div>
       
 
-      <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 40px 0;" />
-
-      <!-- 3. PHOTO ALBUMS GRID -->
-      <h2 style="font-size: 1.6rem; color: #2d3748; margin-bottom: 25px;">Browse Neighborhood Galleries</h2>
-
-      <div class="album-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px;">
-        
-          <div class="album-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-
-            <!-- Fallback folder graphic icon if no custom thumbnail image is uploaded -->
-            <div class="album-thumbnail" style="background: #cbd5e0; height: 160px; display: flex; items-align: center; justify-content: center; align-items: center; color: #718096;">
-              
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-              
-            </div>
-
-            <div class="album-body" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="margin: 0 0 15px 0; font-size: 1.25rem; color: #2d3748; font-weight: 700;">Community</h3>
-              <a href="https://photos.google.com/share/AF1QipNPCAmXALIRwPIdtJPbAvR2plTfFeH8i-Ac-71RwKoz9UOfDiSwTaLxJYRXi6WviQ?key=SFM0T0lHSkxESnQ2Rjd6U1c3U19lMF80cTlrVTR3" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
-                View Album  →
-              </a>
-            </div>
+      <div class="row">
+          <div class="grid_12">
+              <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
+              <div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"
+                data-link="https://photos.google.com/share/AF1QipPfub4iIqDfra5tBsIYZKvKJjIR4VYAHLW_yYHHXJqE_remlPhgtZ0wise3VxI6Jw?key=UFdCcWdRU1laMXN5ajU4d28wbUMwNEtRRFhmQnJn"
+                data-title="Cornwallis Views · Jul 3, 2019 – Jan 9, 2021 📸"
+                data-description="Shared album · Tap to view!">
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczMe5us3xyl0QplJullS05odm9o82oITv9nreXenkyxaCwt73dbJnu1nqxya3HjHOrF1iiJf7pHjjiq3a48Y0-oyf-FmlvLBXAC850PuMQyJQqhXTkU=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczPVEQ5xvkEZel4-_CBgYYRsWgb_7B8qZpInunaw6cDyGm-48Yw6TwdsYza02ysOqRZoWeLJ-mhEaQDbaibyPckyapWE8vQjIUbVtvDFowu9NyMeprM=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczN7HXTK9vKr2elWpx4JxyRA6rEcxrKVxZ51hy_v4zCLukemHG9tkdfvDth9LWnnxdGKOk32vx5-YyolWJQwsKa8Hv9BAhGNlcXSwcONufZb3Fsaa34=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczN7XEJh4c8uQ6NzTHuZvnlpw5WS16cRf2HaqC7gFYkU3T_7vrBAJvDTcfj_R-x3RCtSYmK1gRSEVOFYTSaeex8D4VsqDI8uz-o160h1l7lM84_X14o=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczM8Fb6QVdjtBfH022QqTiaOla8gopZVty9EZraapsqYS5Cc-0L6KCIKi5zqwL1uQFOdvGll99quHZkPb-YXFaakj-lV2lvgQB6wOFmxuP5KA4LAamk=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczMYsytj-ApyAYhAqgRc_MN5RdpQXhoXuSw8Y7GNkpTESuAk45KvHHkn9OZs4vqywJEqJUwQT6RK87f9eC8m2rMPaK7kfdgLeiLFC3pTjAx-QrYr36o=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczMPVfTPD7rcJ1o6L_eSdrJG1I-yy55tVlhjTdKRBmwJaoEq10UZ1T0HrEWBd5fVBIyv--XOTz1cDzoGMTAyBI03UpvEUkk-l088lW-gCNTLFTVOaj8=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczOi_ASoshALLT1bnbSTS88XwvPAhfb8V-zUykpf2AFZ1scVnU20LWCNItrT1VL-oBpT0kPbhCkPpKEevO1kJsX8FzcTMx3foO3llFINh1bBmrTWtJs=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczPZJih35QJNKb0p6qMp8IqmnJEj3twKTcSDhjEn44_gKsLKE9--qEH83hPiJs2dGObeDYtkEkmmrqAsMlCNht2fSWpubgkZwsAH9AuMiHiiqx-dloQ=w1920-h1080"></object>
+                <object data="https://lh3.googleusercontent.com/pw/AP1GczOBxue8F43F0LlYevPdtEGNzA6IETeIlkvEs-raYiBfSpK5wuB8QEj-uDqYC2iVOn0mgF4kxf3nlOtdpNR7x7A1BAk8C6E0O0v6UTYQj8P54hWF9RU=w1920-h1080"></object>
+              </div>
           </div>
-        
-          <div class="album-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-
-            <!-- Fallback folder graphic icon if no custom thumbnail image is uploaded -->
-            <div class="album-thumbnail" style="background: #cbd5e0; height: 160px; display: flex; items-align: center; justify-content: center; align-items: center; color: #718096;">
-              
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-              
-            </div>
-
-            <div class="album-body" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="margin: 0 0 15px 0; font-size: 1.25rem; color: #2d3748; font-weight: 700;">Cornwallis Views 2020</h3>
-              <a href="https://photos.app.goo.gl/1UNFRghfxs6QuBtUA" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
-                View Album  →
-              </a>
-            </div>
-          </div>
-        
-          <div class="album-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-
-            <!-- Fallback folder graphic icon if no custom thumbnail image is uploaded -->
-            <div class="album-thumbnail" style="background: #cbd5e0; height: 160px; display: flex; items-align: center; justify-content: center; align-items: center; color: #718096;">
-              
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-              
-            </div>
-
-            <div class="album-body" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="margin: 0 0 15px 0; font-size: 1.25rem; color: #2d3748; font-weight: 700;">Cornwallis Views 2021</h3>
-              <a href="https://photos.app.goo.gl/1UNFRghfxs6QuBtUA" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
-                View Album  →
-              </a>
-            </div>
-          </div>
-        
-          <div class="album-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
-
-            <!-- Fallback folder graphic icon if no custom thumbnail image is uploaded -->
-            <div class="album-thumbnail" style="background: #cbd5e0; height: 160px; display: flex; items-align: center; justify-content: center; align-items: center; color: #718096;">
-              
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-              
-            </div>
-
-            <div class="album-body" style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="margin: 0 0 15px 0; font-size: 1.25rem; color: #2d3748; font-weight: 700;">Cornwallis Views</h3>
-              <a href="https://photos.google.com/share/AF1QipPfub4iIqDfra5tBsIYZKvKJjIR4VYAHLW_yYHHXJqE_remlPhgtZ0wise3VxI6Jw?key=UFdCcWdRU1laMXN5ajU4d28wbUMwNEtRRFhmQnJn" target="_blank" style="color: #3182ce; text-decoration: none; font-weight: 600; font-size: 0.95rem;">
-                View Album  →
-              </a>
-            </div>
-          </div>
-        
       </div>
 
-
+      
+      <div class=row">
+          <div class="grid_12">
+              <h2>Links to Cornwallis Neighborhood Shared Albums</h2>
+              <ul>
+                  
+                  <li><a href="https://photos.google.com/share/AF1QipNPCAmXALIRwPIdtJPbAvR2plTfFeH8i-Ac-71RwKoz9UOfDiSwTaLxJYRXi6WviQ?key=SFM0T0lHSkxESnQ2Rjd6U1c3U19lMF80cTlrVTR3">Community</a></li>
+                  
+                  <li><a href="https://photos.app.goo.gl/1UNFRghfxs6QuBtUA">Cornwallis Views 2020</a></li>
+                  
+                  <li><a href="https://photos.app.goo.gl/1UNFRghfxs6QuBtUA">Cornwallis Views 2021</a></li>
+                  
+                  <li><a href="https://photos.google.com/share/AF1QipPfub4iIqDfra5tBsIYZKvKJjIR4VYAHLW_yYHHXJqE_remlPhgtZ0wise3VxI6Jw?key=UFdCcWdRU1laMXN5ajU4d28wbUMwNEtRRFhmQnJn">Cornwallis Views</a></li>
+                  
+              </ul>
+          </div>
       </div>
-      <div class="row" style="padding:25px 25px;">
+
+      <div class="row">
+        <div class="grid_6"></div>
         <div class="grid_6">
-        </div>
-        <div class="grid_6">
-          
-<!-- responsive FlexSlider image slideshow sponsors=bottom-->
+          <!-- responsive FlexSlider image slideshow -->
+
+
+
 <div class="flexslider">
   <ul class="slides">
-    <!-- DATA {"img" => "/images/ads/RoyalShell2.png", "caption" => "Royal Shell Real Estate", "phone" => "239-839-8466", "email" => "Realtor.Sandra.Wall@gmail.com", "link" => "https://SandraWall.RoyalShellrealestate.com", "name" => "Royal Shell"}{"img" => "/images/ads/SandraWall2.png", "caption" => "Insurance Options Inc.", "phone" => "239-839-8466", "email" => "medi.sandra.wall@gmail.com", "link" => "https://Insuranceoptionsfl.com", "name" => "Specializing in Medicare Products"}{"img" => "/images/ads/QualityPest.jpg", "caption" => "Donald Burns, Quality Pest Control", "phone" => "239-540-2359", "email" => "qualitypestswfl@gmail.com", "link" => "https://www.qualitypestcontrolswfl.com", "name" => "Quality Pest Control"}{"img" => "/images/ads/FremarConstruction.png", "caption" => "Mark M. Steinberg, Fremar Construction", "phone" => "239-549-8681", "link" => "https://www.fremarhomes.com,https://www.capecoralbuilder.net", "email" => "markms@capecoralbuilder.net", "name" => "Fremar Construction"}{"img" => "/images/ads/Ann_Vaughn2.png", "caption" => "Ann Vaughn REALTOR", "phone" => "239-671-9271", "email" => "annvaughnrealtor@gmail.com", "link" => "https://annvaughn.swfloridaareahomesearch.com", "name" => "Ann Vaughn @ Century 21"}{"img" => "/images/ads/CafeYOU.png", "caption" => "Cafe YOU", "phone" => "239-233-6912", "link" => "https://www.cafeyou.com", "name" => "Cafe YOU"}{"img" => "/images/ads/your_ad_here.jpg", "caption" => "Contact us to list your company, $80/yr", "name" => "CNA", "email" => "cornwallisna+ads@gmail.com", "link" => "https://cornwallisna.org/aboutus"} -->
     
-        
-        <li>
-        
-          <a href="https://SandraWall.RoyalShellrealestate.com"><img src="/images/ads/RoyalShell2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell Real Estate</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
+      
 
-    
-        
+      
         <li>
-        
-          <a href="https://Insuranceoptionsfl.com"><img src="/images/ads/SandraWall2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.qualitypestcontrolswfl.com"><img src="/images/ads/QualityPest.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.qualitypestcontrolswfl.com">Donald Burns, Quality Pest Control</a>
-          <br><a href="tel:239-540-2359">239-540-2359</a>
-          <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.fremarhomes.com"><img src="/images/ads/FremarConstruction.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.fremarhomes.com">Mark M. Steinberg, Fremar Construction</a>
-          <br><a href="tel:239-549-8681">239-549-8681</a>
-          <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://annvaughn.swfloridaareahomesearch.com"><img src="/images/ads/Ann_Vaughn2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://annvaughn.swfloridaareahomesearch.com">Ann Vaughn REALTOR</a>
-          <br><a href="tel:239-671-9271">239-671-9271</a>
-          <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.cafeyou.com"><img src="/images/ads/CafeYOU.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.cafeyou.com">Cafe YOU</a>
-          <br><a href="tel:239-233-6912">239-233-6912</a>
           
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://cornwallisna.org/aboutus"><img src="/images/ads/your_ad_here.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://cornwallisna.org/aboutus">Contact us to list your company, $80/yr</a>
+            <a href="https://SandraWall.RoyalShellrealestate.com" target="_blank" rel="noopener">
           
-          <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
 
+          
+            <img src="/assets/uploads/sponsors/royalshell2.png" alt="Royal Shell">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
     
-    </ul>
-  </div><!-- FlexSlider -->
+      
+
+      
+        <li>
+          
+            <a href="https://Insuranceoptionsfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/sandrawall2.png" alt="Specializing in Medicare Products">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.qualitypestcontrolswfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/qualitypest.jpg" alt="Quality Pest Control">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.qualitypestcontrolswfl.com">Quality Pest Control</a>
+            <br><a href="tel:239-540-2359">239-540-2359</a>
+            <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.fremarhomes.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/fremarconstruction.png" alt="Fremar Construction">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.fremarhomes.com/">Fremar Construction</a>
+            <br><a href="tel:239-549-8681">239-549-8681</a>
+            <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://annvaughn.swfloridaareahomesearch.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/ann_vaughn2.png" alt="Ann Vaughn @ Century 21">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://annvaughn.swfloridaareahomesearch.com/">Ann Vaughn REALTOR</a>
+            <br><a href="tel:239-671-9271">239-671-9271</a>
+            <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.cafeyou.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/cafeyou.png" alt="Cafe You">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.cafeyou.com">Café YOU</a>
+            <br><a href="tel:239-233-6912">239-233-6912</a>
+            
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+
+          
+            <img src="/assets/uploads/sponsors/your_ad_here.jpg" alt="CNA">
+          
+
+          
+          <p class="flex-caption">
+            <a href="">Cornwallis Neighborhood Association</a>
+            
+            <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+  </ul>
+</div><!-- FlexSlider -->
 
         </div>
       </div>
-      
-      
-      
     </section><!-- #end content area -->
-
-
-    <!-- sidebar -->
-    
-
   </div><!-- #end div #main .wrapper -->
+  
 
 <!-- footer area -->
 <footer>
@@ -353,7 +349,7 @@ function printImg(url) {
     <!-- PAGEHITID: page__photos.html -->
     <!-- <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fcornwallisna%2Fcw_website%2Fhit-counter-page__photos.html" alt="Stats" style="display: none;"></a> -->&nbsp; Page created by <a href="mailto:fcassirer@gmail.com">Fred Cassirer</a>,
       <a href="/issues.html">click here to open a new problem report</a>.  To list existing reports, <a href="https://github.com/cornwallisna/cw_website//issues">click here</a>
-      <p>&nbsp; Site last updated at: October 23, 2026 23:33 EDT</p>
+      <p>&nbsp; Site last updated at: October 26, 2026 13:12 EDT</p>
 
     </div>
 

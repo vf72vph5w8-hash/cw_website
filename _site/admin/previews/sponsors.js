@@ -1,108 +1,56 @@
-var SponsorsPreview = createClass({
+// sponsor_card.js
+var CMS = window.CMS;
+var h = window.h;
+
+var SponsorCardPreview = createClass({
   render: function() {
-    var sponsors = this.props.entry.getIn(['data', 'sponsors']);
+    var entry = this.props.entry;
 
-    if (!sponsors) {
-      return h('div', { style: { padding: '1.5rem', fontFamily: 'sans-serif' } }, 'No sponsors yet.');
-    }
+    // Extract metadata properties directly from the active file entry
+    var business = entry.getIn(['data', 'business']) || 'Sponsor Name';
+    var title = entry.getIn(['data', 'title']) || '';
+    var website = entry.getIn(['data', 'website']) || '';
+    var contactName = entry.getIn(['data', 'contact_name']) || '';
+    var phone = entry.getIn(['data', 'phone']) || '';
+    var email = entry.getIn(['data', 'email']) || '';
 
-    var sorted = sponsors.sortBy(function(s) {
-      return s.get('weight') || 999;
+    // Resolve the direct asset path mapping for the image upload field
+    var logoAsset = entry.getIn(['data', 'logo']);
+    var logoUrl = logoAsset ? this.props.getAsset(logoAsset).toString() : '';
+
+    var displayTitle = title ? title : business;
+
+    return h('div', {
+      dangerouslySetInnerHTML: {
+        __html: `
+          <div class="wrapper" id="main" style="padding: 20px; font-family: sans-serif;">
+            <section id="content">
+              <div style="margin-bottom: 30px; border-bottom: 1px dashed #eee; padding-bottom: 20px; max-width: 800px; margin: 0 auto;">
+
+                <h2>${website ? `<a href="${website}" target="_blank">${displayTitle}</a>` : displayTitle}</h2>
+
+                <div class="row">
+                  <div class="grid_7" style="float: left; width: 55%;">
+                    ${logoUrl ? `<a href="${website || '#'}"><img src="${logoUrl}" width="70%" style="float: left; margin-right: 20px;" alt="${displayTitle}" /></a>` : ''}
+                  </div>
+
+                  <div class="grid_5" style="float: left; width: 40%;">
+                    <strong>${contactName ? contactName + ', ' : ''}${business}</strong><br/>
+                    ${phone ? `Phone: <a href="tel:${phone}">${phone}</a><br/>` : ''}
+                    ${email ? `Email: <a href="mailto:${email}">${email}</a><br/>` : ''}
+                    ${website ? `Link: <a href="${website}" target="_blank">${website}</a><br/>` : ''}
+                  </div>
+                </div>
+
+                <div style="clear: both;"></div>
+              </div>
+            </section>
+          </div>
+        `
+      }
     });
-
-    return h('div', { style: { fontFamily: 'sans-serif', padding: '1.5rem' } },
-
-      // === DIRECTORY LIST ===
-      h('h2', { style: { margin: '0 0 1.5rem' } }, 'Sponsors Directory'),
-
-      h('div', { style: { display: 'flex', flexDirection: 'column', gap: '2rem', marginBottom: '3rem' } },
-
-        sorted.map(function(sponsor, i) {
-          var logo = sponsor.get('logo');
-          var logoSrc = logo ? this.props.getAsset(logo).toString() : '';
-          var url = sponsor.get('url') || '';
-          var heading = sponsor.get('tagline') || sponsor.get('company_name') || '';
-          var desc = sponsor.get('contact_name')
-            ? sponsor.get('contact_name') + ', ' + (sponsor.get('company_name') || '')
-            : sponsor.get('company_name') || '';
-
-          return h('div', { key: i },
-
-            h('h2', { style: { margin: '0 0 0.75rem' } },
-              url
-                ? h('a', { href: url, target: '_blank' }, heading)
-                : heading
-            ),
-
-            h('div', { style: { display: 'flex', gap: '1rem', alignItems: 'flex-start' } },
-
-              h('div', { style: { flex: '0 0 58%' } },
-                h('a', { href: url || '#', target: '_blank' },
-                  logoSrc
-                    ? h('img', { src: logoSrc, style: { width: '70%' } })
-                    : h('div', { style: { width: '70%', height: '100px', background: '#f0f0f0', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999', fontSize: '0.8rem' } }, 'No logo')
-                )
-              ),
-
-              h('div', { style: { flex: '1', fontSize: '0.95rem', lineHeight: 1.8 } },
-                h('div', {}, desc),
-                sponsor.get('phone')
-                  ? h('div', {}, 'Phone: ', h('a', { href: 'tel:' + sponsor.get('phone') }, sponsor.get('phone')))
-                  : null,
-                sponsor.get('email')
-                  ? h('div', {}, 'Email: ', h('a', { href: 'mailto:' + sponsor.get('email') }, sponsor.get('email')))
-                  : null,
-                url
-                  ? h('div', {}, 'Link: ', h('a', { href: url, target: '_blank' }, url))
-                  : null
-              )
-            )
-          );
-        }.bind(this))
-      ),
-
-      // === CAROUSEL STRIP ===
-      h('h2', { style: { margin: '0 0 1rem' } }, 'Sponsor Carousel Preview'),
-
-      h('div', { style: { overflowX: 'auto', whiteSpace: 'nowrap', padding: '1rem 0', border: '1px solid #e0e0e0', borderRadius: '8px' } },
-
-        h('div', { style: { display: 'inline-flex', gap: '1.5rem' } },
-
-          sorted.map(function(sponsor, i) {
-            var logo = sponsor.get('logo');
-            var logoSrc = logo ? this.props.getAsset(logo).toString() : '';
-            var url = sponsor.get('url') || '';
-            var caption = sponsor.get('contact_name')
-              ? sponsor.get('contact_name') + ', ' + (sponsor.get('company_name') || '')
-              : sponsor.get('company_name') || '';
-
-            return h('div', { key: i, style: { display: 'inline-block', width: '220px', textAlign: 'center', verticalAlign: 'top' } },
-
-              h('a', { href: url || '#', target: '_blank' },
-                logoSrc
-                  ? h('img', { src: logoSrc, style: { width: '100%', maxHeight: '120px', objectFit: 'contain' } })
-                  : h('div', { style: { width: '100%', height: '120px', background: '#f0f0f0', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#999', fontSize: '0.8rem' } }, 'No logo')
-              ),
-
-              h('p', { style: { fontSize: '0.8rem', lineHeight: 1.6, whiteSpace: 'normal', marginTop: '0.5rem' } },
-                url
-                  ? h('a', { href: url, target: '_blank' }, caption)
-                  : caption,
-                h('br'),
-                sponsor.get('phone')
-                  ? h('a', { href: 'tel:' + sponsor.get('phone') }, sponsor.get('phone'))
-                  : null,
-                h('br'),
-                sponsor.get('email')
-                  ? h('a', { href: 'mailto:' + sponsor.get('email') }, 'Email Us!')
-                  : null
-              )
-            );
-          }.bind(this))
-        )
-      )
-    );
   }
 });
 
-CMS.registerPreviewTemplate('sponsors_manager', SponsorsPreview);   
+// Register specifically to the collection identifier name on your git repo settings
+CMS.registerPreviewTemplate('sponsors', SponsorCardPreview);

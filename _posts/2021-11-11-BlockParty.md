@@ -1,14 +1,10 @@
 ---
-layout: article
-title: "Block Party!"
-categories: articles
-modified: 2021-11-11T15:43:41-04:00
-tags: general,block party
-sponsors: "bottom"
-image:
-  feature: Block-Party-Logo.jpg
-  teaser: Block-Party-Logo.jpg
+title: "Block Party, March 12, 2022 (Raindate March 13)"
+date: 2021-11-11 15:43
+featured: false
+image: Block-Party-Logo.jpg
 ---
+
 
 ## Block Party, March 12, 2022 (Raindate March 13)
 

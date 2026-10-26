@@ -13,9 +13,6 @@
          <h1 style="text-align:center"><img src="/images/CornwallisLetterhead.png" class="center" alt="{{page.title}}"></h1>
       </div>
 
-
-
-
       {% assign section1 = page.split_section_1 %}
       {% if section1 %}
         <div class="row">
@@ -55,12 +52,6 @@
 <!-- content area -->
 <section id="content">
 
-
-
-
-
-
-
     {% if page.mid_page_announcements %}
       <div class="row">
           <div class="grid_12">
@@ -78,7 +69,6 @@
           </div>
       </div>
     {% endif %}
-
 
     {% if page.bottom_row_announcements %}
       <div class="row">
@@ -99,6 +89,7 @@
     {% endif %}
 
     <div class="row">
+        <div class="grid_6"></div>
         <div class="grid_6">
             {% include sponsors.html %}
         </div>

@@ -163,27 +163,26 @@ collections:
                   - { label: 'Destination URL', name: 'url', widget: 'string', hint: 'e.g., https://capecoral.net...', required: false }
                   - { label: 'Phone Number', name: 'phone', widget: 'string', required: false }
 
-  - name: 'sponsors_gallery'
-    label: 'Sponsors Directory'
-    delete: false
-    files:
-      - file: '_data/sponsors.yml'
-        label: 'Manage Sponsors'
-        name: 'sponsors_manager'
-        media_folder: 'assets/uploads/sponsors'
-        public_folder: '/assets/uploads/sponsors'
-        fields:
-          - label: 'Sponsors'
-            name: 'sponsors'
-            widget: 'list'
-            summary: '{{fields.company_name}}'
-            fields:
-              - { label: 'Company Name', name: 'company_name', widget: 'string', hint: 'e.g., Royal Shell, Cafe YOU, Quality Pest Control' }
-              - { label: 'Contact Person Name', name: 'contact_name', widget: 'string', required: false, hint: 'e.g., Mark M. Steinberg, Donald Burns' }
-              - { label: 'Business Telephone Number', name: 'phone', widget: 'string', required: false }
-              - { label: 'Business Email Address', name: 'email', widget: 'string', required: false }
-              - { label: 'Website / Ad Destination URL', name: 'url', widget: 'string', required: false }
-              - { label: 'Sponsor Ad Graphic / Logo File', name: 'logo', widget: 'image', required: false, hint: 'Upload ad banner image.' }
+
+  - name: 'sponsors'
+    label: 'Sponsors'
+    folder: '_sponsors/'
+    create: true
+    format: 'yaml-frontmatter'
+    slug: '{{slug}}'
+    summary: '{{business}}'
+    identifier_field: 'business'
+    media_folder: '/assets/uploads/sponsors'
+    public_folder: '/assets/uploads/sponsors'
+    fields:
+      - { label: 'Company Name', name: 'business', widget: 'string', hint: 'e.g., Royal Shell, Cafe YOU' }
+      - {label: 'Display Title', name: 'title', widget: 'string', hint: 'e.g. Specializing in Medicare Products', required: false}
+      - { label: 'Contact Person Name', name: 'contact_name', widget: 'string', required: false }
+      - { label: 'Business Telephone Number', name: 'phone', widget: 'string', required: false }
+      - { label: 'Business Email Address', name: 'email', widget: 'string', required: false }
+      - { label: 'Website / Ad Destination URL', name: 'website', widget: 'string', required: false }
+      - { label: 'Sponsor Ad Graphic / Logo File', name: 'logo', widget: 'image', required: false }
+
 
   - name: 'photos'
     label: 'Photo Albums & Galleries'
@@ -234,6 +233,7 @@ collections:
               public_folder: '{{public_folder}}/pages' }
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
               hint: 'The paragraph shown above the news.' }
+
       - file: 'sales.md'
         label: 'For Sale / Free Page'
         name: 'sales_page'
@@ -244,6 +244,7 @@ collections:
               public_folder: '{{public_folder}}/pages' }
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
               hint: 'The paragraph shown above the listings.' }
+
       - file: 'calendar.md'
         label: 'Calendar Page'
         name: 'calendar_page'
@@ -252,6 +253,7 @@ collections:
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext',
               hint: 'The paragraph shown above the listings.' }
           - { label: 'Calendar URL', name: 'calendar_url', widget: 'string' }
+
       - file: 'membership.md'
         label: 'Membership Page'
         name: 'membership_page'
@@ -268,6 +270,7 @@ collections:
               hint: 'The heading above the PDF form.' }
           - { label: 'PDF Form File', name: 'pdf_form_file', widget: 'file',
               hint: 'The PDF form file.' }
+
       - file: 'photos.md'
         label: 'Photos Page'
         name: 'photos_page'
@@ -303,6 +306,22 @@ collections:
                 search_fields: ['firstName', 'lastName', 'position']
                 display_fields: ['firstName', 'lastName', 'position']
                 value_field: 'position'
+          - label: 'Intro Feature Image'
+            name: 'image'
+            widget: 'object'
+            required: false
+            fields:
+              - { label: 'Image', name: 'feature', widget: 'image' }
+              - { label: 'Width', name: 'feature_width', widget: 'string', default: '100%' }
+          - { label: 'Main Page Content Body', name: 'body', widget: 'richtext' }
+
+      - file: 'help.md'
+        label: 'Help Page'
+        name: 'help_page'
+        fields:
+          - { label: 'Page Title', name: 'title', widget: 'string' }
+          - { label: 'Help Content Body', name: 'body', widget: 'richtext' }
+
       - file: 'index.md'
         label: 'Home Page'
         name: 'home'
@@ -334,7 +353,6 @@ collections:
             search_fields: ['title']
             value_field: '{{slug}}'
             display_fields: ['title', 'body']
-
           - label: 'Bottom-Row Announcements'
             name: 'bottom_row_announcements'
             widget: 'relation'
@@ -346,8 +364,6 @@ collections:
             value_field: '{{slug}}'
             display_fields: ['title', 'image', 'body']
 
-
-
       - file: 'issues.md'
         label: 'Issues Page'
         name: 'issues'
@@ -355,15 +371,25 @@ collections:
           - { label: 'Page Title', name: 'title', widget: 'string' }
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext', required: false }
           - { label: 'Google Forms Embed URL', name: 'google_form_url', widget: 'string' }
+
       - file: 'links.md'
         label: 'Links Page'
         name: 'links'
         fields:
           - { label: 'Page Title', name: 'title', widget: 'string' }
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext' }
+
       - file: 'sponsors.md'
         label: 'Sponsors Page'
-        name: 'sponsors'
+        name: 'sponsors_page'
         fields:
           - { label: 'Page Title', name: 'title', widget: 'string' }
           - { label: 'Intro Text', name: 'intro_text', widget: 'richtext', required: false }
+          - label: 'Select Active Sponsors'
+            name: 'sponsors_list'
+            widget: 'relation'
+            collection: 'sponsors'
+            search_fields: ['business']
+            value_field: 'business'
+            multiple: true
+            required: false

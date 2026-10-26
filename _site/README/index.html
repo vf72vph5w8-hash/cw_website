@@ -67,45 +67,35 @@ function printImg(url) {
 <body id="home">
 
 <!-- header area -->
-<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
+
 
 
 
 
 <header class="wrapper clearfix">
-
-        <!-- main navigation -->
-        <nav id="topnav" role="navigation">
-          <div class="menu-toggle">Menu</div>
-          <ul class="srt-menu" id="menu-main-navigation">
-              <li ><a href="/index.html">Home page</a></li>
-              <li ><a href="/news.html">News</a></li>
-              <li ><a href="/sales.html">For Sale/Free</a></li>
-              <li ><a href="/calendar.html">Calendar</a></li>
-              <li ><a href="/membership.html">Membership</a></li>
-              <li ><a href="/photos.html">Photos</a></li>
-              <li >
-                  <a href="/aboutus.html#board"">About Us</a>
-                  <ul>
-                      <li><a href="/aboutus.html#board">Board</a></li>
-                      <li><a href="/aboutus.html#documents">Documents</a></li>
-                      <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
-                      <li><a href="/issues.html">Report an issue</a></li>
-                  </ul>
-              </li>
-              <li  >
-                  <a href="/links.html">Useful links</a>
-              </li>
-              <li  >
-                  <a href="/sponsors.html">Sponsors</a>
-              </li>
-          </ul>
-		</nav><!-- end main navigation -->
-        <!-- <div id="banner">
-        	<div id="logo"><a href="/index.html"><img src="/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
-        </div> -->
-
-    </header><!-- end header -->
+  <nav id="topnav" role="navigation">
+    <div class="menu-toggle">Menu</div>
+    <ul class="srt-menu" id="menu-main-navigation">
+      <li ><a href="/index.html">Home page</a></li>
+      <li ><a href="/news.html">News</a></li>
+      <li ><a href="/sales.html">For Sale/Free</a></li>
+      <li ><a href="/calendar.html">Calendar</a></li>
+      <li ><a href="/membership.html">Membership</a></li>
+      <li ><a href="/photos.html">Photos</a></li>
+      <li >
+        <a href="/aboutus.html">About Us</a>
+        <ul>
+          <li><a href="/aboutus.html#board">Board</a></li>
+          <li><a href="/aboutus.html#documents">Documents</a></li>
+          <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
+          <li><a href="/issues.html">Report an issue</a></li>
+        </ul>
+      </li>
+      <li ><a href="/links.html">Useful links</a></li>
+      <li ><a href="/sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+</header>
 
 <!-- end header -->
 
@@ -132,6 +122,8 @@ function printImg(url) {
 
 <p>This website uses Jekyll and the Responsive Starter Template to provide a website for the Cornwallis Neighborhood Community.  The goal of the website is to provide a live newsletter such that information can be shared more quickly and at less cost than our quarterly newsletter.</p>
 
+<p>Content is managed through <a href="https://decapcms.org">Decap CMS</a> (formerly Netlify CMS), which provides a web-based admin interface at <code class="language-plaintext highlighter-rouge">/admin/</code> for authorized board members.</p>
+
 <h1 id="features">Features</h1>
 
 <ul>
@@ -141,102 +133,40 @@ function printImg(url) {
   <li>Membership signup and renewal instructions</li>
   <li>For sale/curb alert items to post</li>
   <li>Association by-laws and document archive</li>
-  <li>Support for our communitY sponsors</li>
+  <li>Support for sponsors</li>
   <li>Website feedback and issue tickets</li>
   <li><a href="/stats.html">Statistics page</a></li>
 </ul>
 
 <h1 id="how-it-works">How it works</h1>
 
-<p>Authorized members of the CNA team can submit updates to this Github repository and upon approval the website is recreated and published.  The overall structure of the website is anticipated to be somewhat static with various pre-defined pages being updated by the CNA.  The following pages can be edited as follows:</p>
+<p>Authorized members of the CNA team log in to the <a href="/admin/">Decap CMS admin</a> using their own Github account via OAuth. Once logged in, they will be able to edit content using the Decap CMS admin pages.  Changes are submitted as pull requests to this GitHub repository as soon as they’re submitted. All of files and configuration related to Decap CMS can be found in the <code class="language-plaintext highlighter-rouge">/admin/</code> directory. The site can continue working completely independently of Decap CMS. Some of the fields added into Decap CMS are not being used at this time. They can be added to the templates in the future if desired, but they were left out for the current template versions of the site. Filling them in will not cause any harm, but they will not be displayed if not included in the templates.</p>
 
-<ul>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/index.md">home page</a> - Front page <a href="https://github.com/cornwallisna/cw_website//edit/main/index.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/news.md">news page</a> - News page <a href="https://github.com/cornwallisna/cw_website//edit/main/news.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/sales.md">for sale page</a> - News page <a href="https://github.com/cornwallisna/cw_website//edit/main/sales.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/presidents.md">presidents page</a> - Presidents Message page <a href="https://github.com/cornwallisna/cw_website//edit/main/presidents.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/vicepresidents.md">vicepresidents page</a> - Vice Presidents Message  page <a href="https://github.com/cornwallisna/cw_website//edit/main/vicepresidents.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/aboutus.md">aboutus page</a> - About page <a href="https://github.com/cornwallisna/cw_website//edit/main/aboutus.md">edit</a></li>
-  <li><a href="https://github.com/cornwallisna/cw_website//blob/main/membership.md">membership page</a> - Membership/Enrollment page <a href="https://github.com/cornwallisna/cw_website//edit/main/membership.md">edit</a></li>
-</ul>
+<h2 id="editing-pages">Editing pages</h2>
+
+<p>Most pages are edited directly through the CMS admin interface.</p>
 
 <h2 id="jekyll-and-frontmatter">Jekyll and frontmatter</h2>
 
-<p><a href="https://jekyll.com">Jekyll</a> is a framework used by Github to easily define and manage web pages.  This site is a combination of Jekyll and the <a href="http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html">Simple Responsive Template</a> which provides the web site layout.</p>
+<p><a href="https://jekyll.com">Jekyll</a> is the static site generator. This site is a combination of Jekyll and the <a href="http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html">Simple Responsive Template</a> which provides the web site layout.</p>
 
-<p>Frontmatter is a <a href="https://jekyllrb.com/docs/front-matter/">Jekyll</a> term that refers to some configuration information that can be added to the top of a Jekyll page.</p>
+<p>Frontmatter is a <a href="https://jekyllrb.com/docs/front-matter/">Jekyll</a> term that refers to configuration information at the top of a Jekyll page. In most cases, the CMS handles frontmatter automatically — you set fields in the admin form and the CMS writes the YAML for you.</p>
 
 <h3 id="supported-frontmatter-for-this-site">Supported frontmatter for this site</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">name</th>
-      <th>description</th>
-      <th>layout type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">layout</td>
-      <td>The type of template page, i.e, home, content_page, article</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">topnav</td>
-      <td>the name(s) of the menu items to highlight when on this page</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">banner</td>
-      <td>Something interesting to say at the top of a page</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">image: feature:</td>
-      <td>name of a png, jpg etc image file to be used above any text.</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">image: teaser:</td>
-      <td>name of a png, jpg etc image file to be used on the blog listing page</td>
-      <td>article</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">sponsors</td>
-      <td>Position or disable advertisement banners.  “off” will disable on the page, other options are “top” or “bottom”</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">title</td>
-      <td>Title of the page or article</td>
-      <td>all</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">modified</td>
-      <td>Date and Time of the form YYYY-MM-DD<b>T</b>HH:MM:SS<b>-04:00</b>.  Note the text in <b>bold</b> is required as is.  Example, 2021-01-26T11:30:41-04:00 is Jan 26, 2021 at 11:30:41am EDT (-04:00 timezone)</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">tags</td>
-      <td>Keywords for future search</td>
-      <td>all</td>
-    </tr>
-  </tbody>
-</table>
+<p>Frontmatter will vary from page-to-page and collection-to-collection. Decap CMS will generate the required frontmatter for all pages within the CMS.</p>
 
 <h3 id="images">Images</h3>
 
-<p>Images are jpg, png, or any other supported picture type.  Typically, they are stored in the images/ folder.  The ‘image:’ frontmatter tag assumes any image name unless otherwise specified is found in the images/ folder.   For example, <b>garage-sale.png</b> would be <a href="https://github.com/cornwallisna/cw_website//tree/main/images">https://github.com/cornwallisna/cw_website/images</a>.  Images can also be links to pictures on the web by providing the URL instead of the image/ link.</p>
+<p>Images are typically stored in the <code class="language-plaintext highlighter-rouge">images/</code> folder. The CMS handles image uploads — select an image in the admin and it will be added to the repository automatically.</p>
 
-<p>Images can be added to the repository via <a href="https://github.com/cornwallisna/cw_website//upload/main/images">drag and drop</a> or by clicking on the Add Files button</p>
+<p>Images can also be external URLs (e.g., Google Photos links). The <code class="language-plaintext highlighter-rouge">image.feature</code> field accepts either a filename (resolved to <code class="language-plaintext highlighter-rouge">/images/filename</code>) or a full <code class="language-plaintext highlighter-rouge">https://</code> URL.</p>
 
 <h2 id="adding-a-new-news-or-for-sale-entry">Adding a new news or for-sale entry</h2>
 
-<p>New entries are created in the <a href="https://github.com/cornwallisna/cw_website//blob/main/_posts">_posts folder</a> folder.  These files are named as
-<em>YYYY-MM-DD-anythingyouwant.md</em>.  For example, 2021-02-02-groundhogsday-update.md where you could tell everyone where to see the groundhogs.</p>
+<p>New entries are created through the CMS admin under the appropriate collection. Each entry is a Jekyll article stored in <code class="language-plaintext highlighter-rouge">_posts/</code> with a filename like <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-slug.md</code>.</p>
 
-<p>Each entry is a Jekyll article page.  An example article might look like:</p>
+<p>An example article frontmatter:</p>
 
 <pre>
 ---
@@ -255,42 +185,35 @@ image:
 ## This is a header
 
 This is content, we are having a garage sale ...
-
 </pre>
 
-<p>You can <a href="https://github.com/cornwallisna/cw_website//new/main/_posts">create a new blog entry</a> directly.  Simply cut and paste the above frontmatter into the new file and add your text below the <code class="language-plaintext highlighter-rouge">---</code>.  Be sure to change the image to suit your blog entry (See above for how to upload a new image).</p>
-
-<p>The categories entry above has two possible values, <em>articles</em> for news and <em>sales</em> for free/for-sale items.  You can also specify a contact and that will be added to the bottom of the message.  Valid forms for the contact info are the same as for sponsors (see https://github.com/cornwallisna/cw_website//_data/sponsors.yml) <em>link</em> field (see below.)</p>
+<p>The <code class="language-plaintext highlighter-rouge">categories</code> field has two values: <em>articles</em> for news and <em>sales</em> for free/for-sale items. The <code class="language-plaintext highlighter-rouge">contact</code> field adds a contact link to the bottom of the message.</p>
 
 <h2 id="advertising">Advertising</h2>
 
-<p>There is a fairly simple advertising capability that will put a scrolling picture slider at the top, side, or bottom of a page.  The contents of the advertising window is controlled by a list of advertiser pictures and captions.</p>
-
-<p>This file can be found in the _data/sponsors.yml file.  To add or remove advertisers simply edit <a href="https://github.com/cornwallisna/cw_website//blob/main/_data/sponsors.yml">this file</a>.
-The file is made of of a list of 4 values:</p>
+<p>The rotating sponsor banner is managed through the <strong>Sponsors</strong> collection in the CMS admin. Each entry has:</p>
 
 <ul>
-  <li>img: is the name of the image, usually found in images/ads/</li>
-  <li>caption: Text caption about the sponsor, maybe a phone number of website link etc.</li>
-  <li>link: Some kind of link that clicking the picture will take you to.  It could be a sponsors website, a mailto: or tel: type link if they do not have a website.</li>
-  <li>name: The name of the advertisor</li>
+  <li><strong>img</strong> – Path to the advertiser image (usually in <code class="language-plaintext highlighter-rouge">images/ads/</code>)</li>
+  <li><strong>caption</strong> – Text caption (supports HTML links)</li>
+  <li><strong>link</strong> – URL, <code class="language-plaintext highlighter-rouge">mailto:</code>, or <code class="language-plaintext highlighter-rouge">tel:</code> link for the click-through</li>
+  <li><strong>name</strong> – Internal identifier</li>
 </ul>
 
-<p>For example:</p>
+<p>The order of entries in the collection determines display order.</p>
 
-<pre>
-slides:
-  - img: /images/ads/DesignsToAT.png
-    caption: Designs To A "T", <a href="tel:239-549-5995">239-549-5995</a>
-    link: mailto:designs2aT@comcast.net
-    name: DesignsToAT
-</pre>
+<h2 id="board-members--documents">Board members &amp; documents</h2>
 
-<p>The order that these entries are listed is the order they are displayed on the website.</p>
+<p>The About page pulls from two CMS collections:</p>
+
+<ul>
+  <li><strong>Board</strong> – One entry per member (position, first/last name, address, phone, email, photo). The <code class="language-plaintext highlighter-rouge">aboutus</code> page’s <code class="language-plaintext highlighter-rouge">board_members</code> field controls display order.</li>
+  <li><strong>Site Documents</strong> – A single entry (<code class="language-plaintext highlighter-rouge">slug: drive_links</code>) containing a list of Google Drive folder links shown in the Documents section.</li>
+</ul>
 
 <h1 id="email-forwarding">Email forwarding</h1>
 
-<p>Emails to council members are forwarded to their respective accounts when email is received by cornwallisna@gmail.com.   The currently supported redirects are:</p>
+<p>Emails to council members are forwarded to their respective accounts when email is received by cornwallisna@gmail.com. The currently supported redirects are:</p>
 
 <ul>
   <li>cornwallisna+president@gmail.com</li>
@@ -302,25 +225,25 @@ slides:
 <p>Additional email tags used within the site include:</p>
 
 <ul>
-  <li>cornwallisna+news@gmail.com  - Send CNA news or life event information to be published</li>
-  <li>cornwallisna+4sale@gmail.com - Send CNA requests to post local sale items and curb alerts (free stuff)</li>
+  <li>cornwallisna+news@gmail.com – Send CNA news or life event information to be published</li>
+  <li>cornwallisna+4sale@gmail.com – Send CNA requests to post local sale items and curb alerts (free stuff)</li>
 </ul>
 
 <h1 id="analytics">Analytics</h1>
 
-<p>The site is being monitored by Google Analytics.  You will need the association account credentials to access the <a href="analytics.google.com">GA site</a>.</p>
+<p>The site is monitored by Google Analytics. You will need the association account credentials to access the <a href="https://analytics.google.com">GA site</a>.</p>
 
 <h1 id="original-readme-from-simple-responsive-starter-template">Original README from Simple Responsive Starter Template</h1>
 
-<p>Simple is a responsive starter web site template. It is intended to be basic and bare-bone, with minimum styling and options included. Still, it has features clients usually would ask for: menu with drop-downs, slider, grid layout. See full list of features below.</p>
+<p>Simple is a responsive starter web site template. It is intended to be basic and bare-bone, with minimum styling and options included. Still, it has features clients usually would ask for: menu with drop-downs, slider, grid layout.</p>
 
-<p>Simple is mainly for web designers (beginner to intermediate level). But it is so simple (pun intended:) ), that any person with very little knowledge of HTML can modify and use it.</p>
+<p>Simple is mainly for web designers (beginner to intermediate level). But it is so simple (pun intended:) that any person with very little knowledge of HTML can modify and use it.</p>
 
-<p>To build a website with Simple, download it and add your own content and pages. Or, if you want a different design, you can tweak the CSS. In either case, you will have a device-agnostic website that works and looks great on smart phones, tablets, laptops, and desktops. This tutorial will get you started and help you build a fully-functional site.</p>
+<p>To build a website with Simple, download it and add your own content and pages. Or, if you want a different design, you can tweak the CSS. In either case, you will have a device-agnostic website that works and looks great on smart phones, tablets, laptops, and desktops.</p>
 
-<p>Simple is compatible with FireFox, Google Chrome, Opera, Opera Mini, Safari, IE9, 10. It is also compatible with IE8, but they will see the mobile layout. IE 6 and IE7 Must Die!</p>
+<p>Simple is compatible with FireFox, Google Chrome, Opera, Opera Mini, Safari, IE9, 10. It is also compatible with IE8, but they will see the mobile layout.</p>
 
-<p>Simple is a FREE software, released without any warranty under Common Public Attribution License. Simple can be used in personal or commercial projects for free provided you keep the attribution statement intact. Read more about terms of use here http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html</p>
+<p>Simple is a FREE software, released without any warranty under Common Public Attribution License. Simple can be used in personal or commercial projects for free provided you keep the attribution statement intact. Read more about terms of use <a href="http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html">here</a>.</p>
 
 <p>If you want to use Simple without attribution link, buy us a coffee and get a waiver: http://www.prowebdesign.ro/simple-responsive-template/conditions-use.html</p>
 
@@ -329,112 +252,179 @@ slides:
         <div class="grid_6">
         </div>
         <div class="grid_6">
-          
-<!-- responsive FlexSlider image slideshow sponsors=bottom-->
+          <!-- responsive FlexSlider image slideshow -->
+
+
+
 <div class="flexslider">
   <ul class="slides">
-    <!-- DATA {"img" => "/images/ads/RoyalShell2.png", "caption" => "Royal Shell Real Estate", "phone" => "239-839-8466", "email" => "Realtor.Sandra.Wall@gmail.com", "link" => "https://SandraWall.RoyalShellrealestate.com", "name" => "Royal Shell"}{"img" => "/images/ads/SandraWall2.png", "caption" => "Insurance Options Inc.", "phone" => "239-839-8466", "email" => "medi.sandra.wall@gmail.com", "link" => "https://Insuranceoptionsfl.com", "name" => "Specializing in Medicare Products"}{"img" => "/images/ads/QualityPest.jpg", "caption" => "Donald Burns, Quality Pest Control", "phone" => "239-540-2359", "email" => "qualitypestswfl@gmail.com", "link" => "https://www.qualitypestcontrolswfl.com", "name" => "Quality Pest Control"}{"img" => "/images/ads/FremarConstruction.png", "caption" => "Mark M. Steinberg, Fremar Construction", "phone" => "239-549-8681", "link" => "https://www.fremarhomes.com,https://www.capecoralbuilder.net", "email" => "markms@capecoralbuilder.net", "name" => "Fremar Construction"}{"img" => "/images/ads/Ann_Vaughn2.png", "caption" => "Ann Vaughn REALTOR", "phone" => "239-671-9271", "email" => "annvaughnrealtor@gmail.com", "link" => "https://annvaughn.swfloridaareahomesearch.com", "name" => "Ann Vaughn @ Century 21"}{"img" => "/images/ads/CafeYOU.png", "caption" => "Cafe YOU", "phone" => "239-233-6912", "link" => "https://www.cafeyou.com", "name" => "Cafe YOU"}{"img" => "/images/ads/your_ad_here.jpg", "caption" => "Contact us to list your company, $80/yr", "name" => "CNA", "email" => "cornwallisna+ads@gmail.com", "link" => "https://cornwallisna.org/aboutus"} -->
     
-        
-        <li>
-        
-          <a href="https://SandraWall.RoyalShellrealestate.com"><img src="/images/ads/RoyalShell2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell Real Estate</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
+      
 
-    
-        
+      
         <li>
-        
-          <a href="https://Insuranceoptionsfl.com"><img src="/images/ads/SandraWall2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.qualitypestcontrolswfl.com"><img src="/images/ads/QualityPest.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.qualitypestcontrolswfl.com">Donald Burns, Quality Pest Control</a>
-          <br><a href="tel:239-540-2359">239-540-2359</a>
-          <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.fremarhomes.com"><img src="/images/ads/FremarConstruction.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.fremarhomes.com">Mark M. Steinberg, Fremar Construction</a>
-          <br><a href="tel:239-549-8681">239-549-8681</a>
-          <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://annvaughn.swfloridaareahomesearch.com"><img src="/images/ads/Ann_Vaughn2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://annvaughn.swfloridaareahomesearch.com">Ann Vaughn REALTOR</a>
-          <br><a href="tel:239-671-9271">239-671-9271</a>
-          <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.cafeyou.com"><img src="/images/ads/CafeYOU.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.cafeyou.com">Cafe YOU</a>
-          <br><a href="tel:239-233-6912">239-233-6912</a>
           
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://cornwallisna.org/aboutus"><img src="/images/ads/your_ad_here.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://cornwallisna.org/aboutus">Contact us to list your company, $80/yr</a>
+            <a href="https://SandraWall.RoyalShellrealestate.com" target="_blank" rel="noopener">
           
-          <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
 
+          
+            <img src="/assets/uploads/sponsors/royalshell2.png" alt="Royal Shell">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
     
-    </ul>
-  </div><!-- FlexSlider -->
+      
+
+      
+        <li>
+          
+            <a href="https://Insuranceoptionsfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/sandrawall2.png" alt="Specializing in Medicare Products">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.qualitypestcontrolswfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/qualitypest.jpg" alt="Quality Pest Control">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.qualitypestcontrolswfl.com">Quality Pest Control</a>
+            <br><a href="tel:239-540-2359">239-540-2359</a>
+            <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.fremarhomes.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/fremarconstruction.png" alt="Fremar Construction">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.fremarhomes.com/">Fremar Construction</a>
+            <br><a href="tel:239-549-8681">239-549-8681</a>
+            <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://annvaughn.swfloridaareahomesearch.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/ann_vaughn2.png" alt="Ann Vaughn @ Century 21">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://annvaughn.swfloridaareahomesearch.com/">Ann Vaughn REALTOR</a>
+            <br><a href="tel:239-671-9271">239-671-9271</a>
+            <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.cafeyou.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/cafeyou.png" alt="Cafe You">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.cafeyou.com">Café YOU</a>
+            <br><a href="tel:239-233-6912">239-233-6912</a>
+            
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+
+          
+            <img src="/assets/uploads/sponsors/your_ad_here.jpg" alt="CNA">
+          
+
+          
+          <p class="flex-caption">
+            <a href="">Cornwallis Neighborhood Association</a>
+            
+            <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+  </ul>
+</div><!-- FlexSlider -->
 
         </div>
       </div>
@@ -455,7 +445,7 @@ slides:
     <!-- PAGEHITID: page_readme.md -->
     <!-- <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fcornwallisna%2Fcw_website%2Fhit-counter-page_readme.md" alt="Stats" style="display: none;"></a> -->&nbsp; Page created by <a href="mailto:fcassirer@gmail.com">Fred Cassirer</a>,
       <a href="/issues.html">click here to open a new problem report</a>.  To list existing reports, <a href="https://github.com/cornwallisna/cw_website//issues">click here</a>
-      <p>&nbsp; Site last updated at: October 23, 2026 23:33 EDT</p>
+      <p>&nbsp; Site last updated at: October 26, 2026 13:12 EDT</p>
 
     </div>
 

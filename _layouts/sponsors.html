@@ -4,57 +4,39 @@
 {% include head.html %}
 <body id="home">
 
-<!-- header area -->
 {% include header.html %}
-<!-- end header -->
-
 
 <section id="page-header" class="clearfix">
-<!-- responsive FlexSlider image slideshow -->
-<div class="wrapper">
-	<h1>{{ page.title }}</h1>
+    <div class="wrapper">
+    	<h1>{{ page.title }}</h1>
     </div>
-
 </section>
-
 
 <!-- main content area -->
   <div class="wrapper" id="main">
-    {% if page.image.feature %}
-           {% if page.image.feature contains "https://" %}
-             {% assign purl = page.image.feature %}
-           {% else %}
-             {% assign purl = "/images/"|append: page.image.feature %}
-           {% endif %}
-             <img src="{{purl}}" width="{{page.image.feature_width}}" />
-    {% endif %}
-<!-- content area -->
+
     <section id="content" >
-
-
-
-    {% for sponsor in site.data.sponsors.sponsors %}
-
-        <h2> <a href="{{sponsor.url}}">{{ sponsor.company_name }}</a> </h2>
-
-        <div class="row">
-        <div class="grid_7">
-            {% if sponsor.logo %}
-            <a href="{{sponsor.url}}"><img src="{{sponsor.logo | relative_url}}" width="70%" style="float: left;"></a>
-            {% endif %}
-        </div>
-        <p>
-        </p><div class="grid_5">{% if sponsor.contact_name %} {{sponsor.contact_name}}, {% endif %}{{ sponsor.company_name }}<br>
-           Phone: <a href="tel:{{sponsor.phone}}">{{sponsor.phone}}</a> <br>
-           Email: <a href="mailto:{{sponsor.email}}">{{sponsor.email}}</a> <br>
-           Link: <a href="{{sponsor.url}}">{{sponsor.url}}</a> <br>
-        </div>
-        </div>
-
+        {% for sponsor_name in page.sponsors_list %}
+        {% assign sponsor = site.sponsors | where: "business", sponsor_name | first %}
+        {% if sponsor %}
+            {% assign display_name = sponsor.business %}
+            {% if sponsor.title %}{% assign display_name = sponsor.title %}{% endif %}
+            <h2><a href="{{sponsor.website}}">{{ display_name }}</a></h2>
+            <div class="row">
+                <div class="grid_7">
+                    {% if sponsor.logo %}
+                    <a href="{{sponsor.website}}"><img src="{{sponsor.logo | relative_url}}" width="70%" style="float: left;" alt="{{sponsor.title}}"></a>
+                    {% endif %}
+                </div>
+                <div class="grid_5">
+                    {% if sponsor.contact_name %} {{sponsor.contact_name}}, {% endif %}{{ sponsor.business }}<br>
+                    Phone: <a href="tel:{{sponsor.phone}}">{{sponsor.phone}}</a> <br>
+                    Email: <a href="mailto:{{sponsor.email}}">{{sponsor.email}}</a> <br>
+                    Link: <a href="{{sponsor.website}}">{{sponsor.website}}</a> <br>
+                </div>
+            </div>
+        {% endif %}
         {% endfor %}
-
-
-
     </section><!-- #end content area -->
 
   </div><!-- #end div #main .wrapper -->

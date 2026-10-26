@@ -1,4 +1,3 @@
-<!-- CURRENT LAYOUT: CONTENT_PAGE -->
 <!DOCTYPE html>
 
 <!-- This is the top of every html page, not the menu header -->
@@ -68,49 +67,39 @@ function printImg(url) {
 <body id="home">
 
 <!-- header area -->
-<!--                0   1     2         3        4     5    6     7    8        9        10     11        12           13      14     15 -->
+
 
 
 
 
 <header class="wrapper clearfix">
-
-        <!-- main navigation -->
-        <nav id="topnav" role="navigation">
-          <div class="menu-toggle">Menu</div>
-          <ul class="srt-menu" id="menu-main-navigation">
-              <li ><a href="/index.html">Home page</a></li>
-              <li ><a href="/news.html">News</a></li>
-              <li ><a href="/sales.html">For Sale/Free</a></li>
-              <li ><a href="/calendar.html">Calendar</a></li>
-              <li ><a href="/membership.html">Membership</a></li>
-              <li ><a href="/photos.html">Photos</a></li>
-              <li >
-                  <a href="/aboutus.html#board"">About Us</a>
-                  <ul>
-                      <li><a href="/aboutus.html#board">Board</a></li>
-                      <li><a href="/aboutus.html#documents">Documents</a></li>
-                      <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
-                      <li><a href="/issues.html">Report an issue</a></li>
-                  </ul>
-              </li>
-              <li  >
-                  <a href="/links.html">Useful links</a>
-              </li>
-              <li  >
-                  <a href="/sponsors.html">Sponsors</a>
-              </li>
-          </ul>
-		</nav><!-- end main navigation -->
-        <!-- <div id="banner">
-        	<div id="logo"><a href="/index.html"><img src="/images/cornwallis-thumbnail.jpg" width="10%" class="center" alt="logo"></a></div>
-        </div> -->
-
-    </header><!-- end header -->
+  <nav id="topnav" role="navigation">
+    <div class="menu-toggle">Menu</div>
+    <ul class="srt-menu" id="menu-main-navigation">
+      <li ><a href="/index.html">Home page</a></li>
+      <li ><a href="/news.html">News</a></li>
+      <li ><a href="/sales.html">For Sale/Free</a></li>
+      <li ><a href="/calendar.html">Calendar</a></li>
+      <li ><a href="/membership.html">Membership</a></li>
+      <li ><a href="/photos.html">Photos</a></li>
+      <li class="current">
+        <a href="/aboutus.html">About Us</a>
+        <ul>
+          <li><a href="/aboutus.html#board">Board</a></li>
+          <li><a href="/aboutus.html#documents">Documents</a></li>
+          <li><a href="mailto:cornwallisna@gmail.com">Send us an email</a></li>
+          <li><a href="/issues.html">Report an issue</a></li>
+        </ul>
+      </li>
+      <li ><a href="/links.html">Useful links</a></li>
+      <li ><a href="/sponsors.html">Sponsors</a></li>
+    </ul>
+  </nav>
+</header>
 
 <!-- end header -->
 
-
+<main>
 <section id="page-header" class="clearfix">
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
@@ -125,7 +114,6 @@ function printImg(url) {
 <!-- content area -->
     <section id="content" >
       <!-- sponsors: bottom -->
-      
       <div class="row">
         
           <div class="intro-block" style="margin-bottom: 35px; line-height: 1.7; color: #4a5568;">
@@ -138,531 +126,333 @@ function printImg(url) {
       
 
 
-      
+
 
   <!-- Section Header -->
-  <h2 style="font-size: 1.8rem; color: #1a202c; margin: 30px 0 20px 0; font-weight: 700; border-bottom: 2px solid #edf2f7; padding-bottom: 10px;">
-    Board Members & Officers
+  <h2 id="board">
+    The Board
   </h2>
 
   <!-- RESPONSIVE GRID CONTAINER -->
-  <div class="board-member-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; align-items: stretch;">
-    
+  <div >
+
     
       
       
-        
-        <!-- INDIVIDUAL MEMBER CARD -->
-        <div class="board-member-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <div>
-            <!-- Position Header Chip -->
-            <span style="display: inline-block; color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 5px;">
-              President
-            </span>
 
-            <!-- Profile Image Container -->
-            
-              <div class="profile-image-wrap" style="margin: 10px 0 15px 0; border-radius: 6px; overflow: hidden; height: 220px; background: #f7fafc; border: 1px solid #edf2f7;">
-                <img src="/assets/uploads/stickperson.png" alt="Ron Jenoriki" style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
-              </div>
-            
-
-            <!-- Officer Name -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.35rem; color: #2d3748; font-weight: 700; line-height: 1.2;">
-              Ron Jenoriki
-            </h3>
-
-            <!-- CONTACT INFORMATION BOX (Replaces the text excerpt) -->
-            <div class="officer-contact-info" style="font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 20px;">
-              
-                <div style="margin-bottom: 6px;">📍 2837 SE 19th Ave</div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">📞 <a href="tel:732-766-4694" style="color: #4a5568; text-decoration: none;">732-766-4694</a></div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">
-                  ✉️ <a href="mailto:cornwallna+president@gmail.com" style="color: #3182ce; text-decoration: none; font-weight: 600;">Email Ron</a>
-                </div>
-              
+        <div class="row">
+            <h3><a href="/board/president/">PRESIDENT's Message</a></h3>
+            <div class="grid_6">
+                <a href="/board/president/">
+                    <img src="/assets/uploads/stickperson.png" alt="Stick Figure" width="30%">
+                    <img src="images/ThoughtBubble-Messages.jpg" align="top" width="20%" alt="Click for Messages">
+                </a>
             </div>
-          </div>
-
-          <!-- ACTION BUTTON LINKING TO SEPARATE PERSONAL MESSAGE PAGE -->
-          <a href="/board/president/" class="btn-read-more" style="display: block; text-align: center; padding: 10px 15px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);">
-            Read Ron's Message →
-          </a>
-
+            <div class="grid_6">
+                <p>
+                    RON JENORIKI
+                    <br>2837 SE 19th Ave
+                    <br><a href="tel:+17327664694">732-766-4694</a>
+                    <br><a href="mailto:cornwallna+president@gmail.com">Email Ron</a>
+                </p>
+            </div>
         </div>
       
     
       
       
-        
-        <!-- INDIVIDUAL MEMBER CARD -->
-        <div class="board-member-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <div>
-            <!-- Position Header Chip -->
-            <span style="display: inline-block; color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 5px;">
-              Vice-president
-            </span>
 
-            <!-- Profile Image Container -->
-            
-              <div class="profile-image-wrap" style="margin: 10px 0 15px 0; border-radius: 6px; overflow: hidden; height: 220px; background: #f7fafc; border: 1px solid #edf2f7;">
-                <img src="/assets/uploads/sticklady.png" alt="Sandra Wall" style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
-              </div>
-            
-
-            <!-- Officer Name -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.35rem; color: #2d3748; font-weight: 700; line-height: 1.2;">
-              Sandra Wall
-            </h3>
-
-            <!-- CONTACT INFORMATION BOX (Replaces the text excerpt) -->
-            <div class="officer-contact-info" style="font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 20px;">
-              
-                <div style="margin-bottom: 6px;">📍 3021 SE 18th Pl</div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">📞 <a href="tel:239-839-8466" style="color: #4a5568; text-decoration: none;">239-839-8466</a></div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">
-                  ✉️ <a href="mailto:cornwallna+vicepresident@gmail.com" style="color: #3182ce; text-decoration: none; font-weight: 600;">Email Sandra</a>
-                </div>
-              
+        <div class="row">
+            <h3><a href="/board/vice-president/">VICE-PRESIDENT's Message</a></h3>
+            <div class="grid_6">
+                <a href="/board/vice-president/">
+                    <img src="/assets/uploads/sticklady.png" alt="Stick Figure" width="30%">
+                    <img src="images/ThoughtBubble-Messages.jpg" align="top" width="20%" alt="Click for Messages">
+                </a>
             </div>
-          </div>
-
-          <!-- ACTION BUTTON LINKING TO SEPARATE PERSONAL MESSAGE PAGE -->
-          <a href="/board/vice-president/" class="btn-read-more" style="display: block; text-align: center; padding: 10px 15px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);">
-            Read Sandra's Message →
-          </a>
-
+            <div class="grid_6">
+                <p>
+                    SANDRA WALL
+                    <br>3021 SE 18th Pl
+                    <br><a href="tel:+12398398466">239-839-8466</a>
+                    <br><a href="mailto:cornwallna+vicepresident@gmail.com">Email Sandra</a>
+                </p>
+            </div>
         </div>
       
     
       
       
-        
-        <!-- INDIVIDUAL MEMBER CARD -->
-        <div class="board-member-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <div>
-            <!-- Position Header Chip -->
-            <span style="display: inline-block; color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 5px;">
-              Secretary
-            </span>
 
-            <!-- Profile Image Container -->
-            
-              <div class="profile-image-wrap" style="margin: 10px 0 15px 0; border-radius: 6px; overflow: hidden; height: 220px; background: #f7fafc; border: 1px solid #edf2f7;">
-                <img src="/assets/uploads/sticklady.png" alt="Karla Martinez" style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
-              </div>
-            
-
-            <!-- Officer Name -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.35rem; color: #2d3748; font-weight: 700; line-height: 1.2;">
-              Karla Martinez
-            </h3>
-
-            <!-- CONTACT INFORMATION BOX (Replaces the text excerpt) -->
-            <div class="officer-contact-info" style="font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 20px;">
-              
-                <div style="margin-bottom: 6px;">📍 2801 SE 22nd Ave</div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">📞 <a href="tel:919-830-8734" style="color: #4a5568; text-decoration: none;">919-830-8734</a></div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">
-                  ✉️ <a href="mailto:cornwallna+secretary@gmail.com" style="color: #3182ce; text-decoration: none; font-weight: 600;">Email Karla</a>
-                </div>
-              
+        <div class="row">
+            <h3><a href="/board/secretary/">SECRETARY's Message</a></h3>
+            <div class="grid_6">
+                <a href="/board/secretary/">
+                    <img src="/assets/uploads/sticklady.png" alt="Stick Figure" width="30%">
+                    <img src="images/ThoughtBubble-Messages.jpg" align="top" width="20%" alt="Click for Messages">
+                </a>
             </div>
-          </div>
-
-          <!-- ACTION BUTTON LINKING TO SEPARATE PERSONAL MESSAGE PAGE -->
-          <a href="/board/secretary/" class="btn-read-more" style="display: block; text-align: center; padding: 10px 15px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);">
-            Read Karla's Message →
-          </a>
-
+            <div class="grid_6">
+                <p>
+                    KARLA MARTINEZ
+                    <br>2801 SE 22nd Ave
+                    <br><a href="tel:+19198308734">919-830-8734</a>
+                    <br><a href="mailto:cornwallna+secretary@gmail.com">Email Karla</a>
+                </p>
+            </div>
         </div>
       
     
       
       
-        
-        <!-- INDIVIDUAL MEMBER CARD -->
-        <div class="board-member-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <div>
-            <!-- Position Header Chip -->
-            <span style="display: inline-block; color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 5px;">
-              Treasurer
-            </span>
 
-            <!-- Profile Image Container -->
-            
-              <div class="profile-image-wrap" style="margin: 10px 0 15px 0; border-radius: 6px; overflow: hidden; height: 220px; background: #f7fafc; border: 1px solid #edf2f7;">
-                <img src="/assets/uploads/stickperson.png" alt="Wendell Christoff" style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
-              </div>
-            
-
-            <!-- Officer Name -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.35rem; color: #2d3748; font-weight: 700; line-height: 1.2;">
-              Wendell Christoff
-            </h3>
-
-            <!-- CONTACT INFORMATION BOX (Replaces the text excerpt) -->
-            <div class="officer-contact-info" style="font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 20px;">
-              
-                <div style="margin-bottom: 6px;">📍 2801 SE 19th Ave</div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">📞 <a href="tel:616-581-1104" style="color: #4a5568; text-decoration: none;">616-581-1104</a></div>
-              
-              
-              
-                <div style="margin-bottom: 6px;">
-                  ✉️ <a href="mailto:cornwallna+treasurer@gmail.com" style="color: #3182ce; text-decoration: none; font-weight: 600;">Email Wendell</a>
-                </div>
-              
+        <div class="row">
+            <h3><a href="/board/treasurer/">TREASURER's Message</a></h3>
+            <div class="grid_6">
+                <a href="/board/treasurer/">
+                    <img src="/assets/uploads/stickperson.png" alt="Stick Figure" width="30%">
+                    <img src="images/ThoughtBubble-Messages.jpg" align="top" width="20%" alt="Click for Messages">
+                </a>
             </div>
-          </div>
-
-          <!-- ACTION BUTTON LINKING TO SEPARATE PERSONAL MESSAGE PAGE -->
-          <a href="/board/treasurer/" class="btn-read-more" style="display: block; text-align: center; padding: 10px 15px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);">
-            Read Wendell's Message →
-          </a>
-
+            <div class="grid_6">
+                <p>
+                    WENDELL CHRISTOFF
+                    <br>2801 SE 19th Ave
+                    <br><a href="tel:+16165811104">616-581-1104</a>
+                    <br><a href="mailto:cornwallna+treasurer@gmail.com">Email Wendell</a>
+                </p>
+            </div>
         </div>
       
-       
+    
   </div>
 
 
 
-      
+
 <!-- ASSOCIATION DOCUMENTS DIRECTORY -->
-<h2 style="font-size: 1.8rem; color: #1a202c; margin: 40px 0 20px 0; font-weight: 700; border-bottom: 2px solid #edf2f7; padding-bottom: 10px;">
-  Documents & Records Archive
-</h2>
-
-<div class="documents-directory-list" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-  
-    <ul style="list-style: none; padding: 0; margin: 0;">
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
+<section>
+    <h2 id="documents">Documents</h2>
+    <div class="row">
+        <div class="grid_12">
             
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              Bi-Laws
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/1z7htN-yh513ab4amzpPrKBkf_c9rHLuP?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
+            <ul>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1z7htN-yh513ab4amzpPrKBkf_c9rHLuP?usp=sharing">Bi-Laws</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/15sAxfyY-clztWBZo5aSFgIWIJt9NGSb_?usp=sharing">CNA Minutes of Meetings</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/182cUKihZiZC8bXqBpjEoYiHaTIOm3QF6?usp=sharing">Agendas</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1VKdOfS8852em5L2Bcs6h_lsXrIjbPKd6?usp=sharing">Treasurers Annual Report</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1RWZJBCMEkXjlItZV2uPIOpdQDHyIAxrZ?usp=sharing">Block Captains</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1iCvR7ugAIrUh2sqzjmKsIhwrbwYuVuin?usp=sharing">Newsletter Archive</a>
+                    </li>
+                
+            </ul>
             
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              CNA Minutes of Meetings
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/15sAxfyY-clztWBZo5aSFgIWIJt9NGSb_?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
-            
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              Agendas
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/182cUKihZiZC8bXqBpjEoYiHaTIOm3QF6?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
-            
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              Treasurers Annual Report
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/1VKdOfS8852em5L2Bcs6h_lsXrIjbPKd6?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
-            
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              Block Captains
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/1RWZJBCMEkXjlItZV2uPIOpdQDHyIAxrZ?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
-            
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              Newsletter Archive
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          
-            <a href="https://drive.google.com/drive/folders/1iCvR7ugAIrUh2sqzjmKsIhwrbwYuVuin?usp=sharing" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          
-
-        </li>
-      
-    </ul>
-  
-</div>
-      <div class="row" style="padding:25px 25px;">
-        <div class="grid_6">
         </div>
+    </div>
+</section>
+
+
+      <div class="row" style="padding:25px 25px;">
+        <div class="grid_6"></div>
         <div class="grid_6">
-          
-<!-- responsive FlexSlider image slideshow sponsors=bottom-->
+          <!-- responsive FlexSlider image slideshow -->
+
+
+
 <div class="flexslider">
   <ul class="slides">
-    <!-- DATA {"img" => "/images/ads/RoyalShell2.png", "caption" => "Royal Shell Real Estate", "phone" => "239-839-8466", "email" => "Realtor.Sandra.Wall@gmail.com", "link" => "https://SandraWall.RoyalShellrealestate.com", "name" => "Royal Shell"}{"img" => "/images/ads/SandraWall2.png", "caption" => "Insurance Options Inc.", "phone" => "239-839-8466", "email" => "medi.sandra.wall@gmail.com", "link" => "https://Insuranceoptionsfl.com", "name" => "Specializing in Medicare Products"}{"img" => "/images/ads/QualityPest.jpg", "caption" => "Donald Burns, Quality Pest Control", "phone" => "239-540-2359", "email" => "qualitypestswfl@gmail.com", "link" => "https://www.qualitypestcontrolswfl.com", "name" => "Quality Pest Control"}{"img" => "/images/ads/FremarConstruction.png", "caption" => "Mark M. Steinberg, Fremar Construction", "phone" => "239-549-8681", "link" => "https://www.fremarhomes.com,https://www.capecoralbuilder.net", "email" => "markms@capecoralbuilder.net", "name" => "Fremar Construction"}{"img" => "/images/ads/Ann_Vaughn2.png", "caption" => "Ann Vaughn REALTOR", "phone" => "239-671-9271", "email" => "annvaughnrealtor@gmail.com", "link" => "https://annvaughn.swfloridaareahomesearch.com", "name" => "Ann Vaughn @ Century 21"}{"img" => "/images/ads/CafeYOU.png", "caption" => "Cafe YOU", "phone" => "239-233-6912", "link" => "https://www.cafeyou.com", "name" => "Cafe YOU"}{"img" => "/images/ads/your_ad_here.jpg", "caption" => "Contact us to list your company, $80/yr", "name" => "CNA", "email" => "cornwallisna+ads@gmail.com", "link" => "https://cornwallisna.org/aboutus"} -->
     
-        
-        <li>
-        
-          <a href="https://SandraWall.RoyalShellrealestate.com"><img src="/images/ads/RoyalShell2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell Real Estate</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
+      
 
-    
-        
+      
         <li>
-        
-          <a href="https://Insuranceoptionsfl.com"><img src="/images/ads/SandraWall2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
-          <br><a href="tel:239-839-8466">239-839-8466</a>
-          <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.qualitypestcontrolswfl.com"><img src="/images/ads/QualityPest.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.qualitypestcontrolswfl.com">Donald Burns, Quality Pest Control</a>
-          <br><a href="tel:239-540-2359">239-540-2359</a>
-          <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.fremarhomes.com"><img src="/images/ads/FremarConstruction.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.fremarhomes.com">Mark M. Steinberg, Fremar Construction</a>
-          <br><a href="tel:239-549-8681">239-549-8681</a>
-          <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://annvaughn.swfloridaareahomesearch.com"><img src="/images/ads/Ann_Vaughn2.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://annvaughn.swfloridaareahomesearch.com">Ann Vaughn REALTOR</a>
-          <br><a href="tel:239-671-9271">239-671-9271</a>
-          <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://www.cafeyou.com"><img src="/images/ads/CafeYOU.png"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://www.cafeyou.com">Cafe YOU</a>
-          <br><a href="tel:239-233-6912">239-233-6912</a>
           
-          <br>
-        </p>
-        </li>
-
-    
-        
-        <li>
-        
-          <a href="https://cornwallisna.org/aboutus"><img src="/images/ads/your_ad_here.jpg"/></a>
-        
-        <p class="flex-caption">
-          <a href="https://cornwallisna.org/aboutus">Contact us to list your company, $80/yr</a>
+            <a href="https://SandraWall.RoyalShellrealestate.com" target="_blank" rel="noopener">
           
-          <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
-          <br>
-        </p>
-        </li>
 
+          
+            <img src="/assets/uploads/sponsors/royalshell2.png" alt="Royal Shell">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://SandraWall.RoyalShellrealestate.com">Royal Shell</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:Realtor.Sandra.Wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
     
-    </ul>
-  </div><!-- FlexSlider -->
+      
+
+      
+        <li>
+          
+            <a href="https://Insuranceoptionsfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/sandrawall2.png" alt="Specializing in Medicare Products">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://Insuranceoptionsfl.com">Insurance Options Inc.</a>
+            <br><a href="tel:239-839-8466">239-839-8466</a>
+            <br><a href="mailto:medi.sandra.wall@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.qualitypestcontrolswfl.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/qualitypest.jpg" alt="Quality Pest Control">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.qualitypestcontrolswfl.com">Quality Pest Control</a>
+            <br><a href="tel:239-540-2359">239-540-2359</a>
+            <br><a href="mailto:qualitypestswfl@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.fremarhomes.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/fremarconstruction.png" alt="Fremar Construction">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.fremarhomes.com/">Fremar Construction</a>
+            <br><a href="tel:239-549-8681">239-549-8681</a>
+            <br><a href="mailto:markms@capecoralbuilder.net">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://annvaughn.swfloridaareahomesearch.com/" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/ann_vaughn2.png" alt="Ann Vaughn @ Century 21">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://annvaughn.swfloridaareahomesearch.com/">Ann Vaughn REALTOR</a>
+            <br><a href="tel:239-671-9271">239-671-9271</a>
+            <br><a href="mailto:annvaughnrealtor@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+            <a href="https://www.cafeyou.com" target="_blank" rel="noopener">
+          
+
+          
+            <img src="/assets/uploads/sponsors/cafeyou.png" alt="Cafe You">
+          
+
+          
+            </a>
+          
+          <p class="flex-caption">
+            <a href="https://www.cafeyou.com">Café YOU</a>
+            <br><a href="tel:239-233-6912">239-233-6912</a>
+            
+            <br>
+          </p>
+        </li>
+      
+    
+      
+
+      
+        <li>
+          
+
+          
+            <img src="/assets/uploads/sponsors/your_ad_here.jpg" alt="CNA">
+          
+
+          
+          <p class="flex-caption">
+            <a href="">Cornwallis Neighborhood Association</a>
+            
+            <br><a href="mailto:cornwallisna+ads@gmail.com">Email Us!</a>
+            <br>
+          </p>
+        </li>
+      
+    
+  </ul>
+</div><!-- FlexSlider -->
 
         </div>
       </div>
-      
-      
-      
-    </section><!-- #end content area -->
 
+</section><!-- #end content area -->
 
-    <!-- sidebar -->
-    
-
-  </div><!-- #end div #main .wrapper -->
+</div><!-- #end div #main .wrapper -->
+</main>
 
 <!-- footer area -->
 <footer>
@@ -670,7 +460,7 @@ function printImg(url) {
     <!-- PAGEHITID: page__aboutus.html -->
     <!-- <img src="https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2Fcornwallisna%2Fcw_website%2Fhit-counter-page__aboutus.html" alt="Stats" style="display: none;"></a> -->&nbsp; Page created by <a href="mailto:fcassirer@gmail.com">Fred Cassirer</a>,
       <a href="/issues.html">click here to open a new problem report</a>.  To list existing reports, <a href="https://github.com/cornwallisna/cw_website//issues">click here</a>
-      <p>&nbsp; Site last updated at: October 23, 2026 23:33 EDT</p>
+      <p>&nbsp; Site last updated at: October 26, 2026 13:12 EDT</p>
 
     </div>
 

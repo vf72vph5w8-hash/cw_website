@@ -1,4 +1,3 @@
-<!-- CURRENT LAYOUT: CONTENT_PAGE -->
 <!DOCTYPE html>
 
 {% include head.html %}
@@ -8,7 +7,7 @@
 {% include header.html %}
 <!-- end header -->
 
-
+<main>
 <section id="page-header" class="clearfix">
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
@@ -23,7 +22,6 @@
 <!-- content area -->
     <section id="content" >
       <!-- sponsors: {{ page.sponsors }} -->
-      {% if page.sponsors == "bottom" %}
       <div class="row">
         {% if page.intro_text %}
           <div class="intro-block" style="margin-bottom: 35px; line-height: 1.7; color: #4a5568;">
@@ -35,165 +33,74 @@
       {% assign board = site.board %}
 
 
-      
+
 {% if page.board_members %}
   <!-- Section Header -->
-  <h2 style="font-size: 1.8rem; color: #1a202c; margin: 30px 0 20px 0; font-weight: 700; border-bottom: 2px solid #edf2f7; padding-bottom: 10px;">
-    Board Members & Officers
+  <h2 id="board">
+    The Board
   </h2>
 
   <!-- RESPONSIVE GRID CONTAINER -->
-  <div class="board-member-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; align-items: stretch;">
-    
+  <div >
+
     {% for item in page.board_members %}
       {% assign member = site.board | where: "position", item.member | first %}
       {% if member %}
-        
-        <!-- INDIVIDUAL MEMBER CARD -->
-        <div class="board-member-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
-          
-          <div>
-            <!-- Position Header Chip -->
-            <span style="display: inline-block; color: #3182ce; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 5px;">
-              {{ member.position | replace: 'vicepresident', 'Vice-President' | capitalize }}
-            </span>
 
-            <!-- Profile Image Container -->
-            {% if member.image.feature %}
-              <div class="profile-image-wrap" style="margin: 10px 0 15px 0; border-radius: 6px; overflow: hidden; height: 220px; background: #f7fafc; border: 1px solid #edf2f7;">
-                <img src="{{ member.image.feature }}" alt="{{ member.firstName }} {{ member.lastName }}" style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
-              </div>
-            {% else %}
-              <div class="profile-image-placeholder" style="margin: 10px 0 15px 0; border-radius: 6px; height: 220px; background: #edf2f7; display: flex; align-items: center; justify-content: center; color: #a0aec0;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-              </div>
-            {% endif %}
-
-            <!-- Officer Name -->
-            <h3 style="margin: 0 0 15px 0; font-size: 1.35rem; color: #2d3748; font-weight: 700; line-height: 1.2;">
-              {{ member.firstName }} {{ member.lastName }}
-            </h3>
-
-            <!-- CONTACT INFORMATION BOX (Replaces the text excerpt) -->
-            <div class="officer-contact-info" style="font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 20px;">
-              {% if member.address %}
-                <div style="margin-bottom: 6px;">📍 {{ member.address }}</div>
-              {% endif %}
-              
-              {% if member.phone %}
-                <div style="margin-bottom: 6px;">📞 <a href="tel:{{ member.phone }}" style="color: #4a5568; text-decoration: none;">{{ member.phone }}</a></div>
-              {% endif %}
-              
-              {% if member.email %}
-                <div style="margin-bottom: 6px;">
-                  ✉️ <a href="mailto:{{ member.email }}" style="color: #3182ce; text-decoration: none; font-weight: 600;">Email {{ member.firstName }}</a>
-                </div>
-              {% endif %}
+        <div class="row">
+            <h3><a href="{{ member.url }}">{{ member.position| replace: 'vicepresident', 'Vice-President' | upcase }}'s Message</a></h3>
+            <div class="grid_6">
+                <a href="{{ member.url }}">
+                    <img src="{{member.image.feature}}" alt="Stick Figure" width="30%">
+                    <img src="images/ThoughtBubble-Messages.jpg" align="top" width="20%" alt="Click for Messages">
+                </a>
             </div>
-          </div>
-
-          <!-- ACTION BUTTON LINKING TO SEPARATE PERSONAL MESSAGE PAGE -->
-          <a href="{{ member.url }}" class="btn-read-more" style="display: block; text-align: center; padding: 10px 15px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);">
-            Read {{ member.firstName }}'s Message →
-          </a>
-
+            <div class="grid_6">
+                <p>
+                    {{ member.firstName | upcase }} {{ member.lastName | upcase }}
+                    <br>{{ member.address }}
+                    <br><a href="tel:+1{{member.phone | replace: '-', ''}}">{{ member.phone }}</a>
+                    <br><a href="mailto:{{ member.email }}">Email {{ member.firstName }}</a>
+                </p>
+            </div>
         </div>
       {% endif %}
-    {% endfor %}   
+    {% endfor %}
   </div>
 {% endif %}
 
 
-      
+
 <!-- ASSOCIATION DOCUMENTS DIRECTORY -->
-<h2 style="font-size: 1.8rem; color: #1a202c; margin: 40px 0 20px 0; font-weight: 700; border-bottom: 2px solid #edf2f7; padding-bottom: 10px;">
-  Documents & Records Archive
-</h2>
-
-<div class="documents-directory-list" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-  {% if site.data.documents.documents.size > 0 %}
-    <ul style="list-style: none; padding: 0; margin: 0;">
-      {% for doc in site.data.documents.documents %}
-        <li style="padding: 15px; border-bottom: 1px solid #edf2f7; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-          
-          <!-- Document Text Title Component with Google Drive SVG -->
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <!-- Official Brand Vector Google Drive Icon Grid Graphic -->
-            <div style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg viewBox="0 0 24 24" width="100%" height="100%" xmlns="http://w3.org">
-                <g fill="none" fill-rule="evenodd">
-                  <path d="M8.81 2h6.38l6.73 11.56h-6.38z" fill="#FFC107"/>
-                  <path d="M15.44 13.56H2.08L5.43 20h13.36z" fill="#4CAF50"/>
-                  <path d="M1.92 13.25L5.27 2 12 13.56H5.43z" fill="#2196F3"/>
-                </g>
-              </svg>
-            </div>
-            
-            <h4 style="margin: 0; font-size: 1.15rem; color: #2d3748; font-weight: 600;">
-              {{ doc.title }}
-            </h4>
-          </div>
-
-          <!-- Interactive Target URL Button Navigation Links -->
-          {% if doc.url %}
-            <a href="{{ doc.url }}" target="_blank" class="btn-view-folder" style="display: inline-block; padding: 8px 16px; background: #3182ce; color: #ffffff; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(49, 130, 206, 0.15); transition: background 0.2s ease;">
-              Open Drive Folder ↗️
-            </a>
-          {% endif %}
-
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p style="color: #718096; font-style: italic; padding: 20px; text-align: center; margin: 0;">
-      No public association directories have been added to the database index file list yet.
-    </p>
-  {% endif %}
-</div>
-      <div class="row" style="padding:25px 25px;">
-        <div class="grid_6">
-        </div>
-        <div class="grid_6">
-          {% include sponsors.html %}
-        </div>
-      </div>
-      {% endif %}
-      {% if page.sponsors == "top" %}
-      <div class="row" style="padding:50px 50px;">
-        <div class="grid_6">
-          {% include sponsors.html %}
-        </div>
-      </div>
-      <div class="row">
-        {{ content }}
-      </div>
-      {% endif %}
-      {% if page.sponsors == "off" %}
-      <!-- {{ page.sponsors }} -->
-      <div class="row">
-        {{ content }}
-      </div>
-      {% endif %}
-    </section><!-- #end content area -->
-
-
-    <!-- sidebar -->
-    {% if page.sidemenu %}
-    <aside>
-        <h2>{{page.sidemenu.title}}</h2>
-            <nav id="secondary-navigation">
-              <ul>
-                {% assign li = '<li class="current">' %}
-                {% for item in page.sidemenu.menuitems %}
-                    {{li}}<a href="{{item.link}}">{{item.text}}</a></li>
-                    {% assign li = "<li>" %}
+<section>
+    <h2 id="documents">Documents</h2>
+    <div class="row">
+        <div class="grid_12">
+            {% if site.data.documents.documents.size > 0 %}
+            <ul>
+                {% for doc in site.data.documents.documents %}
+                    <li>
+                        <a href="{{ doc.url }}">{{ doc.title }}</a>
+                    </li>
                 {% endfor %}
-              </ul>
-             </nav>
-      </aside><!-- #end sidebar -->
-    {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
 
-  </div><!-- #end div #main .wrapper -->
+
+      <div class="row" style="padding:25px 25px;">
+        <div class="grid_6"></div>
+        <div class="grid_6">
+          {% include sponsors.html %}
+        </div>
+      </div>
+
+</section><!-- #end content area -->
+
+</div><!-- #end div #main .wrapper -->
+</main>
 
 {% include footer.html %}
 
